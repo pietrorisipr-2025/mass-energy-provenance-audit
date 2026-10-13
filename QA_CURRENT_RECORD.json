@@ -1,0 +1,32 @@
+{
+  "record": "22059893",
+  "present_in_repo": 2,
+  "original_record_files": 5,
+  "source_file_sha256_and_zenodo_md5": "ALL_PASS",
+  "original_file_bytes_unmodified": true,
+  "release_bundle_sha256": "4943946f821e4b1afcdb23d81980ca4408c11eb1b207e391572113f38a87a189",
+  "repo_starter_sha256": "15c6f53c4616b3c783c3a455e12b8028f1e963a791a0d9c347226b2a6c3566b9",
+  "embedded_research_archives": [
+    {
+      "name": "RPIA_PUBLIC_RELEASE_v1.0.1.zip",
+      "files": 15,
+      "total_uncompressed_bytes": 1257979,
+      "crc": "PASS"
+    }
+  ],
+  "manifests": [
+    {
+      "source": "RPIA_PUBLIC_RELEASE_v1.0.1.zip",
+      "path": "SHA256SUMS.txt",
+      "pass": 14,
+      "mismatch_or_missing": []
+    }
+  ],
+  "pdfs": [
+    {
+      "name": "recursive_power_invariant_audit_public_v1.0.1.pdf",
+      "pages": 55,
+      "page1_title_text": "Recursive Power and Invariant Audit of E = mc2 Provenance, Conditional Reconstruction, and Common Empirical Residue Pietro Risi 22 August 2026 – Public release v1.0.1 Abs"
+    }
+  ]
+}

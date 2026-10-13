@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "Please cite the original Zenodo record and version used."
+title: "Recursive Power and Invariant Audit of E=mc²: Provenance, Conditional Reconstruction, and Irreducible Empirical Inputs"
+authors:
+  - family-names: "Risi"
+    given-names: "Pietro"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.22059893"
+    description: "Original Zenodo record DOI"
+url: "https://zenodo.org/records/22059893"

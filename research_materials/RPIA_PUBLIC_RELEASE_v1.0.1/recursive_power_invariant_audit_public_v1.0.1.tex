@@ -1,0 +1,2354 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{bm}
+\usepackage{array}
+\usepackage{caption}
+
+\geometry{margin=2.35cm}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue!50!black,
+  citecolor=blue!50!black,
+  urlcolor=blue!50!black,
+  pdftitle={Recursive Power and Invariant Audit of E=mc2: Provenance, Conditional Reconstruction, and Common Empirical Residue - v1.0.1},
+  pdfauthor={Pietro Risi}
+}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.55em}
+\setlength{\emergencystretch}{3em}
+\setlist[itemize]{leftmargin=1.6em,itemsep=0.25em,topsep=0.35em}
+\setlist[enumerate]{leftmargin=1.8em,itemsep=0.25em,topsep=0.35em}
+
+\newcommand{\kpar}{\kappa}
+\newcommand{\cstar}{c_{\!*}}
+\newcommand{\RPA}{\textsc{RPA}}
+
+\title{\bfseries Recursive Power and Invariant Audit of \texorpdfstring{$E=mc^2$}{E=mc2}\\[0.25em]
+\large Provenance, Conditional Reconstruction, and Common Empirical Residue}
+\author{Pietro Risi}
+\date{22 August 2026 \quad -- \quad Public release v1.0.1}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This technical research note asks a provenance question rather than proposing a new mass--energy law: once algebraic, representational, metrological and theory-class assumptions are made explicit, what physical premises are required for the operational relation $E_0=m_{\rm in}c^2$?  The analysis expands repeated powers only as bookkeeping devices and then audits, step by step, the invariant structures that can make those factors unavoidable.
+
+Within the standard linear Lorentz momentum representation, a connected future-timelike massive orbit has the familiar shell $E^2-c^2|\mathbf p|^2=E_0^2$.  Comparing the positive-root infrared expansion with the operational definition of inertial mass yields $E_0=m_{\rm in}c^2$.  A terminal dependency audit shows that, after quotienting definitions, unit conventions, coordinate choices, representation conventions and previously established theorems, the three audited genealogies share the same five-element empirical residue: selection of a finite Lorentzian branch, a shared operational cone across the relevant sectors, identification of measured momentum with the standard linear Lorentz covector representation, existence of a stable massive sector with a rest point, and empirical identification of the reported mass with the infrared inertial coefficient.  The five-element intersection is a common residue of the audited route set; it is not claimed to be an exhaustive proof that no future route can require additional route-specific empirical inputs.
+
+Several candidate routes toward a deeper origin are retained as negative or conditional results rather than promoted beyond their evidence.  Renormalization-group alignment can occur in specific models but is not shown to provide a universal natural origin of Lorentz invariance; spin-2 consistency supports a restricted low-energy common-dispersion result but not an exact all-momentum emergence theorem; causal structure fixes a conformal class rather than an absolute metric normalization; and the SI decimal value assigned to $c$ is metrological rather than an independent dimensionful target for a dynamical setting mechanism.
+
+The principal contribution claimed here is therefore methodological: a fail-closed, prior-art-aware provenance ledger that separates theorem, definition, representation, unit convention, theory-class assumption and empirical input, while preserving negative results.  No claim is made of a historically new derivation of $E=mc^2$, a new Lorentz/Poincare theorem, or a universal dynamical mechanism for the five residual empirical inputs.  The novelty status of the synthesis is left as \texttt{NOVELTY\_NOT\_ESTABLISHED}.
+\end{abstract}
+
+\section*{Publication claim boundary}
+This public release is intentionally conservative.  It claims only the following: (i) a checked conditional reconstruction of $E_0=m_{\rm in}c^2$ in a declared operational regime; (ii) a typed dependency genealogy whose global, fiberwise and minimal audited routes have a common five-element empirical residue; and (iii) explicit preservation of failed or conditional deeper-origin mechanisms.  The common-set statement is route-set relative: it does not assert that every logically possible future derivation must contain exactly and only those five empirical inputs.  It does \emph{not} claim a new mass--energy relation, a new derivation of special relativity, a new Wigner/Poincare orbit theorem, a dynamical explanation of the SI number $299\,792\,458$, or a universal origin mechanism for Lorentzian kinematics.  Mathematical correctness and historical novelty are treated as separate gates throughout.
+
+\vspace{0.3em}
+\noindent\textbf{Keywords:} mass--energy equivalence; special relativity; Lorentz transformations; invariant speed; inverse reconstruction; coupled first-order systems; wave equations; Cayley--Hamilton; Lorentz invariant ring; homogeneous polynomials; quadratic forms; mass shell; momentum space; Lorentz orbits; worldline actions; reparametrization invariance; Hamiltonian constraints; principal symbols; characteristic varieties; shared causal cones; Lorentz orbits; multi-sector limiting speeds; effective metrics; Finsler geometry; translations; Poincare group; affine flatness; torsion; Noether theorem; de Sitter; anti-de Sitter.
+
+\section{Motivation and claim boundary}
+The familiar mass--energy relation, historically rooted in the development of special relativity and mass--energy equivalence~\cite{einstein1905sr,einstein1905mass},
+\begin{equation}
+E_0=mc^2
+\label{eq:emc2}
+\end{equation}
+may be written identically as $E_0=m(c\,c)$. That identity by itself contains no new physics: $c^2$ and $c\,c$ are exactly the same mathematical object. The productive question is instead genealogical:
+\begin{quote}
+What earlier mathematical structure generated the repeated appearances that are compressed into the final exponent?
+\end{quote}
+This is an inverse problem. A final expression can generally have many possible parent derivations, so no unique earlier theory can be recovered from algebra alone. The procedure developed below is therefore an \emph{audit of provenance}, not a theorem that reconstructs lost physics from notation.
+
+The central result of the present audit is conditional and standard-compatible: under the usual symmetry assumptions used to construct inertial-frame transformations, one obtains a one-parameter kinematic family containing a universal constant $\kpar$. On the finite-invariant-speed branch,
+\begin{equation}
+\cstar^2=\frac{1}{\kpar}.
+\label{eq:c-kappa}
+\end{equation}
+The low-velocity limit of free-particle dynamics then fixes the rest-energy scale as
+\begin{equation}
+E_0=\frac{m}{\kpar}=m\cstar^2.
+\label{eq:e-kappa}
+\end{equation}
+When experiment identifies $\cstar$ with the vacuum light speed $c$, Eq.~\eqref{eq:e-kappa} becomes Eq.~\eqref{eq:emc2}.
+
+\section{Recursive Power Audit}
+\subsection{Stage I: algebraic unrolling}
+For every integer power $n>1$, temporarily replace
+\begin{equation}
+x^n \longrightarrow \underbrace{x^{[1]}x^{[2]}\cdots x^{[n]}}_{n\ \text{occurrences}},
+\label{eq:unroll}
+\end{equation}
+where the superscripts in square brackets are \emph{provenance labels}, not new physical indices. Initially,
+\begin{equation}
+x^{[1]}=x^{[2]}=\cdots=x^{[n]}=x.
+\end{equation}
+This step is only a lossless rewriting.
+
+\subsection{Stage II: derivational provenance}
+One then moves backward through a known derivation and asks why each occurrence appears. Four recurring mechanisms are useful to distinguish:
+\begin{enumerate}
+\item \textbf{Identification by symmetry or constraint:} a parent expression $xy$ becomes $x^2$ only after $y=x$ is imposed.
+\item \textbf{Quadratic norm or bilinear form:} $x^2$ arises because a vector is inserted twice into a bilinear metric or scalar product.
+\item \textbf{Integration:} a power is generated by an integral such as $\int x\,dx=x^2/2$.
+\item \textbf{Geometric dimensionality or scaling:} an exponent records how a measure scales with a characteristic length.
+\end{enumerate}
+A fifth category, important in inverse work, is \textbf{algebraic inheritance}: a power may simply be carried forward from earlier manipulations without adding independent physical structure.
+
+\subsection{Stage III: controlled factor splitting}
+If two occurrences have distinguishable derivational roles, one may perform a diagnostic deformation
+\begin{equation}
+x^{[1]}x^{[2]}\longrightarrow x_Ax_B,
+\label{eq:split}
+\end{equation}
+and ask whether independent consistency conditions force $x_A=x_B$. This is a test, not an assertion that two physical quantities exist.
+
+\subsection{Stage IV: rejection rule}
+No physical interpretation is assigned to $x_A$ and $x_B$ unless at least one equation depends on them separately. If all observables depend only on the product $x_Ax_B$, the split is underdetermined. For example,
+\begin{equation}
+x^2=(\lambda x)\left(\frac{x}{\lambda}\right),\qquad \lambda\neq0,
+\end{equation}
+shows that a factorization alone cannot recover unique hidden factors.
+
+\section{Calibration examples}
+Table~\ref{tab:examples} illustrates why powers cannot be assigned a universal physical meaning.
+
+\begin{table}[ht]
+\centering
+\caption{Different genealogies of a square.}
+\label{tab:examples}
+\renewcommand{\arraystretch}{1.18}
+\begin{tabular}{>{\raggedright\arraybackslash}p{0.24\linewidth} >{\raggedright\arraybackslash}p{0.34\linewidth} >{\raggedright\arraybackslash}p{0.32\linewidth}}
+\toprule
+Compact expression & Parent structure & Origin of the power \\
+\midrule
+Square area $A=r^2$ & Rectangle $A=ab$, then $a=b=r$ & Two independent lengths identified by symmetry \\
+Circle area $A=\pi r^2$ & Ellipse $A=\pi ab$, then $a=b=r$ & Two semiaxes become equal \\
+Kinetic energy $K=\tfrac12mv^2$ & $dK=m\,\bm v\!\cdot d\bm v$ & Scalar product plus integration \\
+Inverse-square field $F\propto r^{-2}$ & Flux through area $\propto r^2$ in 3-space & Surface dimensionality \\
+Euclidean norm $r^2=x^2+y^2+z^2$ & $\bm r\!\cdot\bm r$ & Bilinear norm \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The circle example demonstrates that backward reconstruction can genuinely recover a more general parent expression. The kinetic-energy and norm examples show the opposite: repeated factors need not have been independent quantities before the power appeared.
+
+\section{General inertial kinematics before introducing \texorpdfstring{$c$}{c}}
+\subsection{Assumptions}
+We restrict attention to collinear inertial boosts. The standard symmetry-first construction uses assumptions of the following kind: spacetime homogeneity (with suitable regularity, yielding linearity), equivalence of inertial frames, spatial isotropy/reciprocity conditions, and closure under composition. Derivations in this general family are discussed, for example, in Refs.~\cite{certik2007,pelissetto2015,tan2026}. The exact minimal axiom set is subtle; in particular, treatments differ on whether time-isotropy or equivalent discrete assumptions must be made explicit~\cite{dey2017}. The present note therefore does not claim a unique minimal axiom system.
+
+A convenient general boost can be written
+\begin{align}
+x' &= \gamma(v)\,(x-vt), \\
+t' &= \gamma(v)\,(t-\kpar v x),
+\label{eq:boosts}
+\end{align}
+where $\kpar$ has dimensions $T^2/L^2$. With the coordinate order $(x,t)$,
+\begin{equation}
+B(v)=\gamma(v)
+\begin{pmatrix}
+1 & -v\\
+-\kpar v & 1
+\end{pmatrix}.
+\end{equation}
+Requiring $B(-v)=B(v)^{-1}$ gives
+\begin{equation}
+\gamma(v)^2\left(1-\kpar v^2\right)=1,
+\label{eq:gammaeq}
+\end{equation}
+so that, on the connected positive branch,
+\begin{equation}
+\gamma(v)=\frac{1}{\sqrt{1-\kpar v^2}}.
+\label{eq:gamma}
+\end{equation}
+
+Applying the RPA to Eq.~\eqref{eq:gammaeq} gives
+\begin{equation}
+\gamma^{[1]}\gamma^{[2]}
+\left[1-\kpar v^{[1]}v^{[2]}\right]=1.
+\end{equation}
+The two factors of $\gamma$ arise from composing a transformation with its inverse. The two appearances of $v$ arise from the two off-diagonal space--time mixing terms. This is provenance information; it does not imply two physical velocities.
+
+\subsection{Composition and universality of \texorpdfstring{$\kpar$}{kappa}}
+Closure under composition gives the velocity law
+\begin{equation}
+w=\frac{u+v}{1+\kpar uv}.
+\label{eq:addition}
+\end{equation}
+If one initially permits the mixing parameter to depend on the boost velocity, composition of arbitrary boosts forces the same parameter to occur throughout the family; it is therefore universal within the kinematic structure. This is the structural ancestor that will later become $1/c^2$.
+
+\subsection{Three branches}
+The sign of $\kpar$ distinguishes three mathematical cases:
+\begin{itemize}
+\item $\kpar=0$: Galilean kinematics, with no finite invariant speed;
+\item $\kpar>0$: Lorentz-like kinematics with a real finite invariant speed;
+\item $\kpar<0$: an elliptic-type branch with no real fixed speed satisfying $\kpar u^2=1$.
+\end{itemize}
+For $\kpar>0$, a speed unchanged by the velocity transformation satisfies
+\begin{equation}
+\kpar u^2=1.
+\end{equation}
+Define that positive invariant speed by
+\begin{equation}
+\cstar\equiv\frac{1}{\sqrt{\kpar}},
+\end{equation}
+which yields Eq.~\eqref{eq:c-kappa}. The numerical value of $\cstar$ is not supplied by the group structure alone. Generalized-relativity derivations commonly leave such a free universal parameter before empirical input is applied~\cite{pal2003,pelissetto2015,drory2014}. The $\kpar<0$ branch should not be rejected by algebra alone: additional monotonicity, temporal-ordering, or causality assumptions are needed to select the physically relevant branch in derivations that initially permit it~\cite{drory2014}.
+
+\section{Additive boost parameter and generator audit}
+\subsection{Linearizing the velocity-composition law}
+The nonlinear composition law in Eq.~\eqref{eq:addition} can be converted into addition of a group parameter. Compose a finite velocity $v$ with an infinitesimal increment $dv$. To first order,
+\begin{align}
+w&=\frac{v+dv}{1+\kpar v\,dv}\nonumber\\
+&=v+\left(1-\kpar v^2\right)dv+O(dv^2).
+\end{align}
+Therefore a parameter $\rho$ satisfying
+\begin{equation}
+d\rho=\frac{dv}{1-\kpar v^2}
+\label{eq:drho}
+\end{equation}
+linearizes the group law up to an arbitrary overall normalization. For $\kpar>0$, let $C=1/\sqrt{\kpar}$. Integration gives
+\begin{equation}
+\rho=C\,\operatorname{artanh}\!\left(\frac{v}{C}\right),
+\qquad
+v=C\tanh\!\left(\frac{\rho}{C}\right).
+\label{eq:rapidityC}
+\end{equation}
+Equivalently, the dimensionless rapidity $\phi=\rho/C$ obeys
+\begin{equation}
+\phi=\operatorname{artanh}(v/C),
+\qquad
+\phi(w)=\phi(u)+\phi(v).
+\end{equation}
+The bound $|\tanh\phi|<1$ makes $C$ the limiting invariant speed on this branch. Only after empirical identification do we write $C=c$.
+
+For $\kpar=0$, Eq.~\eqref{eq:drho} reduces to $d\rho=dv$, so ordinary velocity itself is an additive boost parameter. For $\kpar<0$, writing $\kpar=-1/C^2$ gives
+\begin{equation}
+\rho=C\arctan(v/C),
+\qquad
+v=C\tan(\rho/C),
+\end{equation}
+which is the elliptic analogue of the hyperbolic $\kpar>0$ case. The distinction is therefore structural, not merely notational.
+
+\subsection{Infinitesimal generator and normalization dependence}
+Let $\rho$ be the additive parameter normalized by
+\begin{equation}
+\left.\frac{d\rho}{dv}\right|_{v=0}=1.
+\end{equation}
+With coordinate order $(x,t)$, the corresponding infinitesimal generator is
+\begin{equation}
+G_\rho=
+\begin{pmatrix}
+0 & -1\\
+-\kpar & 0
+\end{pmatrix},
+\end{equation}
+and direct multiplication yields
+\begin{equation}
+\boxed{G_\rho^2=\kpar I}.
+\label{eq:g2}
+\end{equation}
+The RPA provenance is literal composition: $G_\rho^2=G_\rho\circ G_\rho$. However, the scalar coefficient is \emph{not canonical until the group parameter is normalized}. If $\theta=a\rho$, then
+\begin{equation}
+G_\theta=\frac1aG_\rho,
+\qquad
+G_\theta^2=\frac{\kpar}{a^2}I.
+\end{equation}
+For the standard dimensionless rapidity $\phi=\sqrt{\kpar}\,\rho=\operatorname{artanh}(v/c_*)$ on the $\kpar>0$ branch,
+\begin{equation}
+\boxed{G_\phi^2=I}.
+\end{equation}
+Thus $G^2=\kpar I$ is a correct statement only with its coordinate order and parameter normalization attached. A coordinate-basis change acts by similarity and preserves the scalar in a fixed normalization; a rescaling of the group parameter changes it.
+
+Moreover, the existence of a scalar square is not peculiar to the boost generator. For any traceless $2\times2$ matrix
+\begin{equation}
+N=\begin{pmatrix}a&b\\c&-a\end{pmatrix},
+\end{equation}
+Cayley--Hamilton gives
+\begin{equation}
+\boxed{N^2=(a^2+bc)I}.
+\label{eq:tracelessCH}
+\end{equation}
+Accordingly, Eq.~\eqref{eq:g2} is useful provenance information but not, by itself, evidence of a unique physical structure.
+
+\subsection{Why the numerical value cannot follow from kinematic symmetry alone}
+The parameter $\kpar$ is dimensionful,
+\begin{equation}
+[\kpar]=T^2/L^2.
+\end{equation}
+Consequently its numerical value depends on the chosen units of length and time. In units where the invariant speed is set to unity, $\cstar=1$ and $\kpar=1$. Kinematic symmetry can therefore determine the functional role and universality of $\kpar$, and additional physical assumptions can constrain its branch, but the measured value $\cstar=299\,792\,458\,\mathrm{m\,s^{-1}}$ is not derivable from dimensionless symmetry arguments alone. The finite invariant speed must be fixed by physical measurement or by matching to an independently calibrated dynamical sector~\cite{pelissetto2015,pal2003}.
+
+\section{Invariant interval and the genealogy of \texorpdfstring{$c^2$}{c squared}}
+Equations~\eqref{eq:boosts} preserve
+\begin{equation}
+t^2-\kpar x^2.
+\end{equation}
+Multiplying by $1/\kpar$ on the $\kpar>0$ branch gives the length-squared form
+\begin{equation}
+ds^2=\frac{1}{\kpar}\,dt^2-dx^2
+=\cstar^2dt^2-dx^2.
+\label{eq:interval1d}
+\end{equation}
+In three observed spatial dimensions this becomes
+\begin{equation}
+ds^2=\cstar^2dt^2-dx^2-dy^2-dz^2.
+\label{eq:interval3d}
+\end{equation}
+The number of spatial dimensions is not derived by this argument.
+
+Now define a temporal coordinate with dimensions of length,
+\begin{equation}
+x^0=\cstar t.
+\end{equation}
+Then
+\begin{equation}
+ds^2=(dx^0)^2-dx^2-dy^2-dz^2.
+\label{eq:metricx0}
+\end{equation}
+The RPA makes the repeated conversion factor explicit:
+\begin{equation}
+\cstar^2dt^2=(\cstar\,dt)(\cstar\,dt).
+\label{eq:cdt}
+\end{equation}
+Thus, at the metric level, the two factors of $\cstar$ arise because the time coordinate is converted to a length scale and then appears in both slots of a quadratic form. They are not evidence of two distinct invariant speeds.
+
+\section{Free-particle dynamics and the rest-energy scale}
+On the $\kpar>0$ branch define proper time by
+\begin{equation}
+d\tau=dt\sqrt{1-\kpar v^2}.
+\end{equation}
+Let the free-particle action be
+\begin{equation}
+S=-\mu\int d\tau,
+\end{equation}
+so that
+\begin{equation}
+L=-\mu\sqrt{1-\kpar v^2},
+\label{eq:lagmu}
+\end{equation}
+where $\mu$ has dimensions of energy but has not yet been identified with $mc^2$.
+
+For small $v$,
+\begin{equation}
+L=-\mu+\frac{1}{2}\mu\kpar v^2+O(v^4).
+\end{equation}
+The Newtonian kinetic term is $\tfrac12mv^2$, where $m$ is the inertial mass measured in the low-velocity theory. Matching coefficients gives
+\begin{equation}
+\mu\kpar=m,
+\qquad
+\mu=\frac{m}{\kpar}.
+\label{eq:mumatch}
+\end{equation}
+The canonical momentum is
+\begin{equation}
+\bm p=\frac{\partial L}{\partial \bm v}
+=\frac{m\bm v}{\sqrt{1-\kpar v^2}}
+=\gamma m\bm v,
+\end{equation}
+and the Hamiltonian is
+\begin{equation}
+E=\bm p\!\cdot\bm v-L
+=\frac{m/\kpar}{\sqrt{1-\kpar v^2}}
+=\gamma\frac{m}{\kpar}.
+\label{eq:energykappa}
+\end{equation}
+At rest,
+\begin{equation}
+\boxed{E_0=\frac{m}{\kpar}}.
+\label{eq:e0kappa}
+\end{equation}
+Using $\cstar^2=1/\kpar$,
+\begin{equation}
+\boxed{E_0=m\cstar^2}.
+\end{equation}
+After the empirical identification $\cstar=c$, this is the standard rest-energy relation.
+
+The Galilean branch $\kpar=0$ must be treated separately: the derivation above divides by $\kpar$ and therefore does not define an analogous finite relativistic rest-energy offset there.
+
+\section{Energy--momentum relation under the audit}
+From Eqs.~\eqref{eq:energykappa} and the momentum relation,
+\begin{equation}
+E^2-\frac{1}{\kpar}\,\bm p^2=\frac{m^2}{\kpar^2}.
+\label{eq:epkappa}
+\end{equation}
+With $\cstar^2=1/\kpar$,
+\begin{equation}
+E^2-\bm p^2\cstar^2=m^2\cstar^4.
+\label{eq:epstandard}
+\end{equation}
+Equivalently,
+\begin{equation}
+\left(\frac{E}{\cstar}\right)^2-\bm p^2=(m\cstar)^2.
+\label{eq:fourmomnorm}
+\end{equation}
+Here $\bm p^2$ means $\bm p\!\cdot\bm p$, so its square is a norm, not a product of two independently postulated momenta.
+
+Equation~\eqref{eq:fourmomnorm} exposes two roles played by the same invariant speed: $E/\cstar$ converts energy to momentum dimensions, while $m\cstar$ sets the rest norm of the four-momentum. This motivates a controlled factor-splitting test.
+
+\section{Factor-splitting diagnostic for the two factors in \texorpdfstring{$mc^2$}{mc squared}}
+Introduce two positive constants solely as a probe:
+\begin{equation}
+\left(\frac{E}{c_T}\right)^2-\bm p^2=m^2c_M^2.
+\label{eq:splitprobe}
+\end{equation}
+Then
+\begin{equation}
+E^2=\bm p^2c_T^2+m^2c_M^2c_T^2.
+\end{equation}
+For small momentum,
+\begin{align}
+E
+&=mc_Mc_T
+\sqrt{1+\frac{\bm p^2}{m^2c_M^2}}\\
+&\approx mc_Mc_T
++\frac{\bm p^2}{2m}\frac{c_T}{c_M}+O(p^4).
+\label{eq:splitexp}
+\end{align}
+If $m$ is held fixed as the Newtonian inertial mass, the kinetic coefficient must be $1/(2m)$. Therefore
+\begin{equation}
+\frac{c_T}{c_M}=1,
+\qquad c_T=c_M.
+\label{eq:splitcollapse}
+\end{equation}
+At rest Eq.~\eqref{eq:splitprobe} gives
+\begin{equation}
+E_0=mc_Mc_T,
+\end{equation}
+and Eq.~\eqref{eq:splitcollapse} collapses this to $E_0=mc^2$ once the common constant is identified with $c$.
+
+This is a useful example of what the RPA can and cannot do. It can separate two \emph{roles} and test whether they may vary independently. It does not establish that nature contains two hidden velocities. More precisely, the conclusion $c_T=c_M$ follows only if $m$ is already held fixed as the same Newtonian inertial mass, $\bm p$ is the canonically normalized Newtonian momentum, and $c_T,c_M>0$. If one instead permits a redefinition $m_N=m c_M/c_T$, the low-momentum coefficient can absorb the ratio. The split is therefore an audit probe, not an additional pair of physical degrees of freedom.
+
+\section{Electromagnetic and generic coupled-wave chain}
+\subsection{Two coupled first-order fields}
+Consider constant coefficients $\alpha,\beta$ and sufficiently regular fields $A(x,t),B(x,t)$,
+\begin{align}
+A_x&=-\alpha B_t,\\
+B_x&=-\beta A_t.
+\end{align}
+Differentiating once more and commuting mixed partials gives
+\begin{equation}
+A_{xx}=\alpha\beta A_{tt},
+\qquad
+B_{xx}=\alpha\beta B_{tt},
+\end{equation}
+or
+\begin{equation}
+\boxed{A_{xx}-\alpha\beta A_{tt}=0},
+\qquad
+\boxed{B_{xx}-\alpha\beta B_{tt}=0}.
+\label{eq:genericwave}
+\end{equation}
+For $\alpha\beta>0$, the real characteristic speed is
+\begin{equation}
+\boxed{v_{\rm char}^2=\frac1{\alpha\beta}}.
+\label{eq:vab}
+\end{equation}
+For $\alpha\beta=0$ the system is degenerate; for $\alpha\beta<0$ Eq.~\eqref{eq:genericwave} is not hyperbolic in $(x,t)$ and does not define a real wave speed.
+
+Writing
+\begin{equation}
+\Psi=\binom AB,
+\qquad
+M=\begin{pmatrix}0&\alpha\\\beta&0\end{pmatrix},
+\qquad
+\Psi_x=-M\Psi_t,
+\end{equation}
+one has
+\begin{equation}
+\boxed{M^2=\alpha\beta I}.
+\label{eq:M2}
+\end{equation}
+This is the operator-composition provenance $M\circ M$: the two off-diagonal maps $A\to B$ and $B\to A$ return to the original field and multiply their coefficients. Equation~\eqref{eq:tracelessCH} shows that a scalar square is generic for traceless $2\times2$ matrices; it is not unique to this off-diagonal form.
+
+\subsection{Field rescaling and the invariant product}
+Under constant nonzero rescalings
+\begin{equation}
+A'=\lambda A,
+\qquad
+B'=\sigma B,
+\end{equation}
+the coefficients transform as
+\begin{equation}
+\alpha'=\frac\lambda\sigma\alpha,
+\qquad
+\beta'=\frac\sigma\lambda\beta,
+\end{equation}
+so
+\begin{equation}
+\boxed{\alpha'\beta'=\alpha\beta}.
+\end{equation}
+Equivalently, $M'=SMS^{-1}$ with $S=\operatorname{diag}(\lambda,\sigma)$. Hence $\alpha$ and $\beta$ separately depend on field normalization, while their product, eigenvalues, and characteristic speed are invariant under this relative rescaling. In fact
+\begin{equation}
+\alpha\beta=-\det M,
+\end{equation}
+so the product is not an independent new matrix invariant.
+
+For $\alpha\beta>0$ and same-sign coefficients, one may choose relative field units so that
+\begin{equation}
+\alpha'=\beta'=\operatorname{sgn}(\alpha)\sqrt{\alpha\beta}.
+\end{equation}
+Thus a visually symmetric pair of coefficients can be a normalization convention rather than additional physics.
+
+\subsection{Maxwell in source-free vacuum}
+Write the curl equations symbolically as
+\begin{align}
+\nabla\times\mathbf E&=-\alpha\,\partial_t\mathbf B,\\
+\nabla\times\mathbf B&=\beta\,\partial_t\mathbf E.
+\end{align}
+Using
+\begin{equation}
+\nabla\times(\nabla\times\mathbf E)
+=\nabla(\nabla\cdot\mathbf E)-\nabla^2\mathbf E
+\end{equation}
+and the source-free constraints $\nabla\cdot\mathbf E=0$, $\nabla\cdot\mathbf B=0$, one obtains
+\begin{equation}
+\boxed{\nabla^2\mathbf E-\alpha\beta\,\partial_t^2\mathbf E=0},
+\qquad
+\boxed{\nabla^2\mathbf B-\alpha\beta\,\partial_t^2\mathbf B=0}.
+\end{equation}
+The divergence constraints are essential: the two curl equations alone do not remove the longitudinal gradient terms.
+
+In SI using $\mathbf E,\mathbf B$ in source-free vacuum,
+\begin{equation}
+\alpha=1,
+\qquad
+\beta=\mu_0\epsilon_0,
+\end{equation}
+so
+\begin{equation}
+\boxed{v_{\rm EM}^2=\frac1{\mu_0\epsilon_0}}.
+\end{equation}
+In Gaussian and Heaviside--Lorentz units with $c$ explicit, a usual normalization has $\alpha=\beta=1/c$. In natural units $c=1$, both can be written as unity. The individual coefficients are therefore convention-dependent; the characteristic cone is the invariant content.
+
+\subsection{Two independent kappa parameters and covariance test}
+Keep the kinematic and electromagnetic coefficients separate:
+\begin{equation}
+\kappa_K \quad\text{and}\quad \kappa_{EM}=\alpha\beta.
+\end{equation}
+Transform the scalar wave operator
+\begin{equation}
+\mathcal W_{EM}=\partial_x^2-\kappa_{EM}\partial_t^2
+\end{equation}
+under a boost constructed with $\kappa_K$. The transformed coefficients are
+\begin{align}
+C_{xx}&=\gamma_K^2(1-\kappa_{EM}v^2),\\
+C_{xt}&=2\gamma_K^2v(\kappa_{EM}-\kappa_K),\\
+C_{tt}&=\gamma_K^2(\kappa_K^2v^2-\kappa_{EM}).
+\end{align}
+For a nontrivial boost with finite $\gamma_K$, the mixed derivative vanishes iff
+\begin{equation}
+\boxed{\kappa_{EM}=\kappa_K}.
+\label{eq:kmatch}
+\end{equation}
+When Eq.~\eqref{eq:kmatch} holds, the normalized operator is exactly invariant in this calculation. A nonzero overall conformal factor cannot remove a mixed derivative when the two kappa values differ.
+
+Crucially, Eq.~\eqref{eq:kmatch} is \emph{conditional on imposing common covariance}: it does not follow from kinematics alone or from Maxwell alone. It says that, if the electromagnetic wave operator is to have the same form for the inertial frames defined by $\kappa_K$, its characteristic cone must coincide with the kinematic cone. Covariance of this scalar wave operator is also weaker than full covariance of Maxwell fields and sources.
+
+\section{Non-electromagnetic controls}
+The mechanism ``two first-order couplings $\to$ product in second order $\to$ speed squared'' is generic.
+
+\paragraph{Linear acoustics.}
+For background density $\rho_0$ and bulk modulus $K$,
+\begin{equation}
+\rho_0 u_t=-p_x,
+\qquad
+p_t=-K u_x,
+\end{equation}
+so
+\begin{equation}
+\boxed{v_s^2=\frac K{\rho_0}}.
+\end{equation}
+
+\paragraph{Stretched string.}
+For tension $T$ and line density $\mu_{\rm line}$, choosing transverse velocity $A$ and minus the slope as $B$ puts the first-order system into the same sign convention, yielding
+\begin{equation}
+\boxed{v_{\rm string}^2=\frac T{\mu_{\rm line}}}.
+\end{equation}
+
+\paragraph{Ideal transmission line.}
+For inductance and capacitance per unit length $L',C'$,
+\begin{equation}
+V_x=-L'I_t,
+\qquad
+I_x=-C'V_t,
+\end{equation}
+and
+\begin{equation}
+\boxed{v_{\rm TL}^2=\frac1{L'C'}}.
+\end{equation}
+These controls show that Eq.~\eqref{eq:vab} is a generic wave-kinematics mechanism. In acoustics, strings, and transmission lines it typically refers to propagation relative to a medium or device and does not imply a fundamental Lorentz symmetry.
+
+\section{Structural comparison: boost generator versus wave coupling}
+The audited relations
+\begin{equation}
+G_\rho^2=\kappa_K I,
+\qquad
+M^2=\kappa_{\rm wave}I
+\end{equation}
+share a mathematical representation but do not require a physical identification. Both are instances of the traceless-$2\times2$ Cayley--Hamilton identity, yet their domains and roles differ:
+\begin{itemize}
+\item $G_\rho$ acts on spacetime coordinates/tangent vectors and generates inertial transformations;
+\item $M$ acts on a field doublet and determines the characteristics of a first-order PDE system;
+\item $G_\rho$ changes under rescaling of the boost parameter, while $M$ changes by similarity under field rescaling;
+\item equal scalar squares can identify equal characteristic cones without identifying the two operators.
+\end{itemize}
+When $\kappa_{EM}=\kappa_K\ne0$, the two matrices can be mathematically similar after appropriate basis choices because they share the same minimal polynomial. No canonical physical intertwiner from coordinate space to field space follows. The correct classification is therefore:
+\begin{quote}
+\textbf{same representation of a general mathematical structure, but no necessary physical connection.}
+\end{quote}
+
+\section{Revised genealogical map}
+The kinematic-dynamical chain is
+\begin{equation}
+\boxed{E_0=mc^2}
+\end{equation}
+\[
+\Updownarrow
+\]
+\begin{equation}
+E_0=\frac{m}{\kappa_K},
+\qquad
+c_*^2=\frac1{\kappa_K}
+\end{equation}
+\[
+\Updownarrow
+\]
+\begin{center}
+reciprocal boost family + $\kappa_K>0$ + invariant free-particle action + Newtonian mass normalization.
+\end{center}
+Separately, the wave chain is
+\begin{equation}
+A_x=-\alpha B_t,\quad B_x=-\beta A_t
+\end{equation}
+\[
+\Downarrow
+\]
+\begin{equation}
+M^2=\alpha\beta I,
+\qquad
+v_{\rm wave}^2=\frac1{\alpha\beta}.
+\end{equation}
+For source-free Maxwell, $\kappa_{EM}=\alpha\beta$. The two branches converge only after the additional covariance condition
+\begin{equation}
+\boxed{\kappa_{EM}=\kappa_K}.
+\end{equation}
+This identifies the electromagnetic characteristic cone with the inertial kinematic cone. It does not turn Maxwell theory into a derivation of mass--energy equivalence, nor does it identify the field coupling matrix with the boost generator.
+
+
+\section{Extension: Recursive Power and Invariant Audit}
+The preceding analysis suggests a stronger question than factor unrolling alone.  Given a compact expression containing powers, which parts survive changes of units, basis, coordinates, parametrization, or field normalization, and which parts are merely representational?  We therefore extend the RPA to a \emph{Recursive Power and Invariant Audit} (RPIA).  For every power or root one records:
+\begin{enumerate}
+\item its algebraic expansion;
+\item its derivational provenance (bilinear norm, operator composition, repeated derivative, integration, scaling, or algebraic inheritance);
+\item its transformation under passive basis/coordinate changes and under active symmetry transformations;
+\item its stability under unit and normalization changes;
+\item whether it is reducible to a power of a lower-degree invariant;
+\item the exact extra structure required if it is not so reducible.
+\end{enumerate}
+
+For mass--energy equivalence this distinction is already visible.  The powers of $c$ may be removed by defining $\kappa=1/c_*^2$ and using mass-normalized energy and momentum,
+\begin{equation}
+\mathcal E\equiv \kappa E=\frac{E}{c_*^2},
+\qquad
+\bm{\mathcal P}\equiv \sqrt{\kappa}\,\bm p=\frac{\bm p}{c_*},
+\end{equation}
+so that Eq.~\eqref{eq:epstandard} becomes
+\begin{equation}
+\boxed{\mathcal E^2-\bm{\mathcal P}^{\,2}=m^2}.
+\label{eq:massnormalizeddisp}
+\end{equation}
+At rest, $\mathcal E_0=m$.  Thus the positive powers of $c$ are not the invariant core of the dispersion relation; the Lorentzian quadratic norm is.
+
+
+\section{Metric-ultralocal spinless worldline theorem}
+\label{sec:worldline-theorem}
+Let $x^\mu(\lambda)$ be a massive timelike worldline and $v^\mu=\dot x^\mu$.  The statement proved in this section is deliberately restricted.  Assume a local first-order Lagrangian $L(x,v)$ with no explicit $\lambda$ dependence, exact invariance under all orientation-preserving reparametrizations, full fiberwise $SO^+(T_xM,g_x)$ invariance acting on the single timelike vector $v$, and natural ultralocal dependence only on $g_x$, $v$, and scalar species parameters independent of $x$.  One-form interactions, extra background tensors, metric-derivative couplings, spin/internal variables, higher worldline derivatives, and undeclared boundary terms are excluded from this theorem.
+
+Under $\lambda'=f(\lambda)$ with $f'>0$,
+\begin{equation}
+v'^{\mu}=\frac{v^\mu}{f'},\qquad d\lambda'=f' d\lambda.
+\end{equation}
+Exact invariance for arbitrary curves implies positive degree-one homogeneity,
+\begin{equation}
+L(x,\alpha v)=\alpha L(x,v),\qquad \alpha>0,
+\label{eq:worldline-homogeneity}
+\end{equation}
+and conversely this homogeneity is sufficient for oriented reparametrization invariance in the stated first-order class.
+
+For one future timelike vector, the full Lorentz group acts transitively on each hyperboloid of fixed
+\begin{equation}
+q=g_x(v,v)>0.
+\end{equation}
+Therefore Lorentz invariance gives $L_x(v)=F_x(q)$.  Combining this with Eq.~\eqref{eq:worldline-homogeneity},
+\begin{equation}
+F_x(\alpha^2q)=\alpha F_x(q),
+\end{equation}
+so for every $q>0$
+\begin{equation}
+\boxed{F_x(q)=C(x)\sqrt q}.
+\label{eq:worldline-Cx}
+\end{equation}
+No continuity assumption is needed to solve this functional equation once it holds for all $\alpha>0$; differentiability is needed later for momenta and equations of motion.  Fiberwise Lorentz symmetry alone does not make $C(x)$ constant because it does not compare different base points.
+
+The stronger constant-coefficient statement requires the extra \emph{metric-ultralocal naturality} assumption: the pointwise data are only $g_x$, $v$, and scalar species parameters independent of $x$.  No nonconstant scalar can be constructed naturally from the value of a metric of fixed signature at one point alone.  On a connected component,
+\begin{equation}
+C(x)=C=\text{constant}.
+\end{equation}
+If derivatives of the metric are admitted, this conclusion fails: for example $C(R)\sqrt q$ is still first-order in worldline derivatives, Lorentz covariant, and reparametrization invariant.  Thus ``metric-only'' must mean ultralocal/minimal, not merely ``constructed from the metric and its derivatives.''
+
+Choosing a nonzero massive convention $C=-\mu c$ gives
+\begin{equation}
+L=-\mu c\sqrt{g_{\mu\nu}v^\mu v^\nu}.
+\label{eq:worldline-square-root}
+\end{equation}
+The sign of the canonical covector depends on convention; the geometric shell below is insensitive to the overall sign.  With
+\begin{equation}
+P_\mu=\frac{\partial L}{\partial v^\mu}
+=-\mu c\,\frac{g_{\mu\nu}v^\nu}{\sqrt q},
+\end{equation}
+one obtains the singular Legendre image
+\begin{equation}
+\boxed{g^{\mu\nu}P_\mu P_\nu=\mu^2c^2}.
+\label{eq:worldline-shell}
+\end{equation}
+Thus, inside the stated theory class, the standard timelike mass-shell \emph{surface} is derived rather than separately postulated.
+
+In a local inertial frame and time gauge $x^0=ct$, $\lambda=t$,
+\begin{equation}
+L_t=-\mu c^2\sqrt{1-\frac{|\bm v|^2}{c^2}}
+=-\mu c^2+\frac{\mu}{2}|\bm v|^2+\frac{\mu}{8}\frac{|\bm v|^4}{c^2}+\cdots.
+\end{equation}
+Defining Newtonian/IR inertial mass by the coefficient of $|\bm v|^2/2$ identifies $\mu=m_{\rm in}$.  Solving Eq.~\eqref{eq:worldline-shell} on the positive-energy branch gives
+\begin{equation}
+E=\sqrt{m_{\rm in}^2c^4+c^2|\bm p|^2},\qquad
+\boxed{E_0=m_{\rm in}c^2}.
+\end{equation}
+This is a conditional derivation within the selected worldline class, not an explanation of why nature selects that class.
+
+\subsection{Mandatory negative controls}
+Reparametrization invariance alone does not select Eq.~\eqref{eq:worldline-square-root}.  A generic positively one-homogeneous Finsler function $F(x,v)$ also defines a reparametrization-invariant action.  A concrete anisotropic control is the $DISIM_b(2)$ worldline of Gibbons, Gomis and Pope~\cite{gibbons2007finsler}, schematically
+\begin{equation}
+L_b\propto[-\eta(v,v)]^{(1-b)/2}[-n\!\cdot\!v]^b,
+\end{equation}
+whose total degree in $v$ is one but which contains a preferred covector $n$ and gives a nonquadratic dual indicatrix for $b\neq0$.
+
+Likewise, admitting higher worldline derivatives permits reparametrization- and Lorentz-invariant rigid-particle terms built from the extrinsic curvature, such as $\int ds\,\kappa$ or $\int ds\,\kappa^2$; these introduce additional phase-space variables and constraints~\cite{deriglazov2013rigid}.  The first-order hypothesis is therefore essential.  One-form interactions provide another boundary: $q\int A_\mu dx^\mu$ is first-order and one-homogeneous but uses additional background structure and shifts canonical relative to kinetic momentum.  Finally, allowing metric derivatives permits curvature-dependent effective masses.  These are not exceptions to the theorem; each violates an explicit theory-class assumption.
+
+\section{Hamiltonian constraint audit: what reparametrization does not determine}
+For a differentiable one-homogeneous Lagrangian, Euler's theorem gives
+\begin{equation}
+P_\mu v^\mu=L,
+\end{equation}
+so the ungauge-fixed canonical Hamiltonian satisfies
+\begin{equation}
+\boxed{H_c=P_\mu v^\mu-L=0}.
+\label{eq:Hc-zero}
+\end{equation}
+Differentiating Euler's identity shows that the velocity Hessian has $v$ as a null direction; the Legendre map is singular and the phase-space image carries constraints.  Equation~\eqref{eq:Hc-zero} expresses reparametrization redundancy and does \emph{not} mean that the physical energy is zero.
+
+For the square-root theory one convenient phase-space form is
+\begin{equation}
+S=\int d\lambda\left[P_\mu\dot x^\mu-
+\frac{N}{2}\left(g^{\mu\nu}P_\mu P_\nu-\mu^2c^2\right)\right].
+\label{eq:phase-space-worldline}
+\end{equation}
+Varying $N$ imposes the shell, while varying $P$ gives $\dot x^\mu=NP^\mu$.  Eliminating $P$ gives the einbein form
+\begin{equation}
+S=\frac12\int d\lambda\left(N^{-1}q+N\mu^2c^2\right),
+\end{equation}
+and eliminating $N$ returns a square-root branch.  After fixing a local time gauge and solving the constraint on the positive-energy branch, the reduced Hamiltonian is
+\begin{equation}
+H_{\rm phys}=\sqrt{\mu^2c^4+c^2|\bm p|^2},
+\end{equation}
+which is logically distinct from the pre-gauge identity $H_c=0$.
+
+The converse implication fails.  A general reparametrization-invariant phase-space action
+\begin{equation}
+S=\int d\lambda\,[P\cdot\dot x-N\,\mathcal C(x,P)]
+\end{equation}
+merely imposes $\mathcal C=0$; it does not determine a quadratic function.  Finsler/anisotropic constraints, higher-power dispersions in the presence of extra structure, and multi-shell constraints are all admissible.  Even when the geometric shell is the standard quadric, its defining function is not unique.  If $Q=P^2-\mu^2c^2$, then $h(Q)$ with $h(0)=0$, $h'(0)\neq0$, or $f(x,P)Q$ with $f\neq0$ on the shell can describe the same regular constraint surface and gauge curves up to lapse rescaling.  By contrast $Q^3=0$ has the same zero set but is singular because $d(Q^3)=0$ on the shell; its Hamiltonian vector field vanishes there.  The invariant object is therefore the regular shell geometry plus its constraint flow, not a unique printed quadratic equation.
+
+\section{Degree audit under spatial isotropy}
+Write locally
+\begin{equation}
+T=\dot t,\qquad R^2=X^2+Y^2+Z^2.
+\end{equation}
+For a single spatial vector, $SO(3)$ isotropy implies that homogeneous polynomials of degrees two, three, and four have the forms
+\begin{align}
+P_2&=AT^2+BR^2,\
+P_3&=AT^3+BTR^2=T(AT^2+BR^2),\
+P_4&=AT^4+BT^2R^2+CR^4.
+\end{align}
+No additional one-vector $SO(3)$ scalar is supplied by the spatial Levi--Civita tensor because contractions with repeated copies of the same vector vanish.
+
+\subsection{Cubic trial form}
+The nondegenerate cubic $AB\neq0$ is odd under full reversal,
+\begin{equation}
+P_3(-T,-\bm X)=-P_3(T,\bm X),
+\end{equation}
+and its null set contains both the quadratic factor $AT^2+BR^2=0$ and the additional hyperplane $T=0$ whenever the quadratic factor defines a real cone.
+
+For the reduced $(T,X)$ plane, take the most general infinitesimal linear transformation
+\begin{equation}
+\delta T=aT+bX,\qquad \delta X=cT+dX,
+\end{equation}
+and allow conformal preservation $\delta P_3=sP_3$.  Exact coefficient matching gives
+\begin{align}
+A(3a-s)&=0,\nonumber\\
+3Ab+2Bc&=0,\nonumber\\
+B(a+2d-s)&=0,\nonumber\\
+Bb&=0.
+\end{align}
+For $AB\neq0$,
+\begin{equation}
+\boxed{b=c=0,\qquad d=a,\qquad s=3a}.
+\end{equation}
+Thus the nondegenerate isotropic cubic admits no nontrivial \emph{linear} time--space mixing generator of this type; only the dilation family remains in the reduced plane.  This statement is deliberately narrow.  Degenerate cases such as $P_3=AT^3$ admit triangular shears, and nonlinear tangent flows can preserve a cubic locally.  Nonreversibility is likewise not a mathematical impossibility.
+
+\subsection{Quartic trial form}
+For
+\begin{equation}
+P_4=AT^4+BT^2X^2+CX^4,
+\end{equation}
+the same infinitesimal ansatz with $\delta P_4=sP_4$ yields the mixing equations
+\begin{equation}
+2Ab+Bc=0,
+\qquad
+Bb+2Cc=0.
+\end{equation}
+A nonzero mixing pair $(b,c)$ exists iff
+\begin{equation}
+\boxed{B^2=4AC}.
+\label{eq:quarticdisc}
+\end{equation}
+When $A\neq0$, Eq.~\eqref{eq:quarticdisc} gives
+\begin{equation}
+\boxed{P_4=A\left(T^2+\frac{B}{2A}X^2\right)^2}.
+\label{eq:quarticsquare}
+\end{equation}
+Hence a nondegenerate isotropic quartic with continuous linear time--space mixing is a scalar multiple of a quadratic square.  It represents a Lorentz-type boost only when the quadratic factor is indefinite (for $A\neq0$, $B/A<0$); a definite factor produces elliptic rotational mixing instead.  The equality $B^2=4AC$ alone does not imply a positive real square: negative scalar multiples and rank-one degeneracies must be distinguished.
+
+The quartic null structure is controlled by
+\begin{equation}
+f(z)=A+Bz+Cz^2,
+\qquad z=R^2/T^2\ge0.
+\end{equation}
+Depending on the positive roots, a generic quartic can have no cone, one simple cone, one double cone, or two distinct cones.  Such genuinely quartic structures therefore exist mathematically, but the generic cases do not possess the linear mixing symmetry just described.
+
+\subsection{Quadratic positive control and Newtonian non-selection}
+For $P_2=AT^2+BX^2$ with $AB\neq0$, conformal preservation gives
+\begin{equation}
+a=d=s/2,
+\qquad
+c=-\frac AB b.
+\end{equation}
+With exact invariance $s=0$, one nontrivial off-diagonal generator remains.  For $P_2=T^2-X^2$ this is the standard infinitesimal hyperbolic boost.
+
+The low-velocity expansion does \emph{not} by itself select degree two.  If
+\begin{equation}
+P_n(1,v)=1-\lambda v^2+O(v^4),
+\qquad F_n=P_n^{1/n},
+\end{equation}
+then
+\begin{equation}
+F_n=1-\frac{\lambda}{n}v^2+O(v^4),
+\end{equation}
+and $L=-\mu F_n$ matches $mv^2/2$ whenever
+\begin{equation}
+\mu\lambda=\frac n2m,
+\end{equation}
+provided the relevant parameters remain adjustable and a real regular branch exists.  Newtonian matching therefore constrains a coefficient combination, not the polynomial degree.
+
+\section{One-vector Lorentz invariant ring}
+The strongest degree-selection statement comes from full Lorentz invariance rather than from the preceding degree-by-degree trials.  Let
+\begin{equation}
+V=(T,\bm X)\in\mathbb R^{1,3},
+\qquad
+q=T^2-R^2.
+\end{equation}
+Spatial rotations reduce any one-vector invariant polynomial to $f(T,u)$ with $u=R^2$.  An infinitesimal boost acts through
+\begin{equation}
+D=\partial_T+2T\partial_u.
+\end{equation}
+The invariant condition is $Df=0$.  With $w=u-T^2$, one has $Dw=0$ and $DT=1$, hence the polynomial kernel is
+\begin{equation}
+\boxed{\mathbb R[T,X,Y,Z]^{SO^+(1,3)}=\mathbb R[q]}.
+\label{eq:invariantring}
+\end{equation}
+Because $q$ is also invariant under $SO(1,3)$ and $O(1,3)$ and the connected group is a subgroup of them, the same one-vector polynomial invariant ring is obtained for these real groups.
+
+For an isotropic homogeneous polynomial
+\begin{equation}
+P_n=\sum_{j=0}^{\lfloor n/2\rfloor}c_jT^{n-2j}u^j,
+\end{equation}
+boost invariance gives
+\begin{equation}
+(n-2j)c_j+2(j+1)c_{j+1}=0.
+\end{equation}
+Thus
+\begin{equation}
+\boxed{P_{2k}=Cq^k},
+\qquad
+\boxed{P_{2k+1}=0}
+\label{eq:evenoddinv}
+\end{equation}
+for nonzero homogeneous scalar invariants of a single vector.  A Levi--Civita contraction does not evade this result with only one vector; antisymmetry forces it to vanish.
+
+Equation~\eqref{eq:invariantring} is a statement about global polynomial invariants.  It does not say that $q$ alone separates all real $SO^+(1,3)$ orbits: future and past timelike cones remain distinct, and nonpolynomial/cone-restricted invariant functions may encode such orbit data.  With several vectors or extra tensors, additional Gram, pseudoscalar, and background-dependent invariants occur.
+
+\section{Collapse of higher even one-vector invariants}
+For $C\neq0$ and $k\ge1$,
+\begin{equation}
+P_{2k}=Cq^k
+\end{equation}
+implies
+\begin{equation}
+\boxed{|P_{2k}|^{1/(2k)}
+=|C|^{1/(2k)}|q|^{1/2}}.
+\label{eq:evencollapse}
+\end{equation}
+Therefore, on a fixed regular branch and within the one-vector polynomial Lorentz-invariant scope, higher even degrees do not define a new local norm geometry: they differ by normalization and by branch/sign/orientation data.  They correspond to symmetrized powers of the metric rather than to an independent higher-rank geometry.
+
+This result has strict boundaries.  The absolute-value expression is nonsmooth on $q=0$; causal sign and time orientation remain separate data; $C=0$ is degenerate; and the result does not extend in general to multiple vectors, additional tensor fields, reduced or broken Lorentz symmetry, general Finsler structures, quartic dispersion relations with background data, or area-metric geometries.
+
+\subsection{Corrected degree statement}
+The phrase ``degree two is the irreducible minimum of relativistic geometry'' is too strong and is rejected.  The audited theorem is instead:
+\begin{quote}
+For one vector in the standard real Lorentz representation, the scalar polynomial invariant ring is generated by the degree-two quadratic form $q$.  Every nonzero homogeneous even invariant is a scalar multiple of $q^k$, and nonzero homogeneous odd polynomial invariants do not occur.
+\end{quote}
+In this precise sense, degree two is the \emph{minimal positive-degree generator of the one-vector polynomial invariant ring}.  No claim is made that every relativistic or generalized spacetime geometry must be quadratic.
+
+\section{Second independent exact audit: degree and invariant structure}
+A second Codex audit dated 13 August 2026 tested the degree-two, cubic, quartic, Newtonian, and Lorentz-invariant claims with exact coefficient identities.  Its overall verdict was
+\begin{equation}
+\boxed{\texttt{PASS\_WITH\_CORRECTIONS}}.
+\end{equation}
+The symbolic checker reported 40/40 exact checks passed.  The central results were:
+\begin{itemize}
+\item the one-vector $SO(3)$ homogeneous bases at degrees $2,3,4$ are exactly the forms used above;
+\item the nondegenerate cubic has no continuous \emph{linear} time--space mixing generator in the audited conformal-preservation problem, while degenerate cubics and nonlinear local symmetries provide explicit boundary cases;
+\item quartic linear mixing exists iff $B^2=4AC$, which reduces the nondegenerate quartic to a scalar multiple of a quadratic square; a Lorentz boost further requires the quadratic factor to be indefinite;
+\item the Newtonian limit alone does not select degree two;
+\item for one real Lorentz vector, the polynomial invariant ring is $\mathbb R[q]$, yielding the even-power collapse of Eq.~\eqref{eq:evencollapse};
+\item the broad ``irreducible degree'' claim must be replaced by the precise invariant-ring statement above.
+\end{itemize}
+
+The uploaded audit bundle had a reproducibility packaging defect: its validator expected the earlier dependency \texttt{symbolic\_audit.py} and a \texttt{logs/} directory, neither of which was included in the ZIP layout received here.  After restoring that prior dependency from the preceding audit and placing the supplied log at the expected path, the symbolic computation re-ran successfully.  After normalizing only environment-header lines and CRLF/LF line endings, the complete mathematical output matched the supplied Codex log exactly.  The defect is therefore recorded as a packaging issue rather than a mathematical failure.
+
+\section{Independent fail-closed symbolic audit}
+A separate audit package dated 13 August 2026 evaluated sections A--I using exact polynomial/rational identities with no floating-point sampling as proof. The overall result was
+\begin{equation}
+\boxed{\texttt{PASS\_WITH\_CORRECTIONS}}.
+\end{equation}
+The symbolic checker reported 17/17 checks passed; the artifact validator also passed all of its consistency checks. No central sign error was found after conventions were made explicit. The corrections were primarily assumption and interpretation boundaries.
+
+The four highest-impact corrections were:
+\begin{enumerate}
+\item $G^2=\kappa I$ must state the boost-parameter normalization; dimensionless rapidity gives $G_\phi^2=I$.
+\item $c_T=c_M$ follows from the low-momentum test only when Newtonian inertial mass and canonical momentum normalizations are held fixed.
+\item the scalar-square property is generic for traceless $2\times2$ matrices by Cayley--Hamilton.
+\item $\kappa_{EM}=\kappa_K$ follows after a common covariance requirement, not from the two sectors independently.
+\end{enumerate}
+
+The audit also produced useful deductions: $\alpha\beta=-\det M$; relative field rescaling is a similarity transformation; equal cones do not identify operators; and the non-electromagnetic controls provide an internal counterexample to the claim that $M^2=qI$ would imply a relativity principle.
+
+
+\section{Common mass-shell lemma: from a linear Lorentz orbit to the full dispersion}
+The preceding sections reconstructed the invariant speed, the free-particle action, and the one-vector invariant ring.  A stronger question is whether one can recover the \emph{entire} massive dispersion relation from the common boost structure rather than merely its low-momentum coefficient.  The answer is affirmative under a narrower and more precise hypothesis: the physical four-momentum itself must transform in the standard linear vector representation of the Lorentz group, and the physical shell must be a single future-timelike group orbit.
+
+\subsection{Local infinitesimal derivation in 1+1 dimensions}
+Write the standard boost of the physical energy and collinear momentum as
+\begin{equation}
+E'=\gamma(E-vp),\qquad
+p'=\gamma\left(p-\frac{vE}{c^2}\right),
+\qquad
+\gamma=(1-v^2/c^2)^{-1/2}.
+\label{eq:massshellboost}
+\end{equation}
+At the identity, $\gamma'(0)=0$, so
+\begin{equation}
+\delta E=-p\,\delta v,
+\qquad
+\delta p=-\frac{E}{c^2}\,\delta v.
+\label{eq:massshellgenerator}
+\end{equation}
+If a regular local branch is a graph $E=E(p)$, invariance requires the boost generator to be tangent to it.  The fail-closed form, avoiding division at degenerate points, is
+\begin{equation}
+-p=-\frac{E}{c^2}\frac{dE}{dp},
+\qquad\Longleftrightarrow\qquad
+E\,dE=c^2p\,dp.
+\label{eq:massshelltangent}
+\end{equation}
+Hence on every connected regular segment
+\begin{equation}
+E^2-c^2p^2=C.
+\label{eq:massshelllocal}
+\end{equation}
+A rest point $(E,p)=(E_0,0)$ fixes $C=E_0^2$.  This ODE argument is local and is not used at vertical or singular branches; the orbit argument below is the global statement.
+
+\subsection{Global orbit statement in 3+1 dimensions}
+Let
+\begin{equation}
+P^\mu=\left(\frac{E}{c},\mathbf p\right),
+\qquad
+\eta=\operatorname{diag}(1,-1,-1,-1).
+\end{equation}
+The standard vector representation of $SO^+(1,3)$ preserves
+\begin{equation}
+P^2=\eta_{\mu\nu}P^\mu P^\nu
+=\frac{E^2}{c^2}-|\mathbf p|^2.
+\label{eq:fourmomentumnorm}
+\end{equation}
+For $E_0>0$, the orbit of the future-timelike rest point $(E_0/c,\mathbf0)$ is therefore
+\begin{equation}
+\boxed{E^2-c^2|\mathbf p|^2=E_0^2,\qquad E>0.}
+\label{eq:commonmassshell}
+\end{equation}
+The word \emph{orbit} is essential.  A connected invariant set can contain a family of distinct orbits, and a Lorentz-invariant defining function can contain multiple massive, null, or spacelike factors.  Thus ``connected invariant shell'' is not by itself a sufficient global hypothesis unless regularity, dimension, and transitivity are supplied.
+
+\subsection{Infrared inertial mass and rest energy}
+On the positive branch of Eq.~\eqref{eq:commonmassshell},
+\begin{equation}
+E=\sqrt{E_0^2+c^2|\mathbf p|^2}
+=E_0+\frac{c^2|\mathbf p|^2}{2E_0}
+-\frac{c^4|\mathbf p|^4}{8E_0^3}+O(|\mathbf p|^6).
+\label{eq:massshellexpansion}
+\end{equation}
+If and only if the inertial mass in this argument is \emph{defined operationally} by
+\begin{equation}
+E=E_0+\frac{|\mathbf p|^2}{2m_{\rm in}}+O(|\mathbf p|^4),
+\end{equation}
+comparison yields
+\begin{equation}
+\boxed{m_{\rm in}=\frac{E_0}{c^2}},
+\qquad
+\boxed{E_0=m_{\rm in}c^2}.
+\label{eq:massshellmc2}
+\end{equation}
+This does not automatically identify $m_{\rm in}$ with gravitational, bare, pole, renormalized, or Lagrangian mass parameters; those identifications require additional physical structures.
+
+\section{Surface, defining function, and representation dependence}
+\subsection{The shell is not its defining formula}
+Define
+\begin{equation}
+Q(E,\mathbf p)=E^2-c^2|\mathbf p|^2-E_0^2.
+\end{equation}
+The physical shell is the zero-set $Q=0$, not a privileged algebraic expression.  The functions
+\begin{equation}
+Q,
+\qquad Q^3,
+\qquad e^Q-1
+\end{equation}
+have the same real zero-set, although $Q^3$ has multiplicity three and vanishing defining gradient on the shell.  In contrast,
+\begin{equation}
+Q(Q-a)
+\end{equation}
+adds the level $Q=a$, and $\sin Q$ contains infinitely many levels $Q=n\pi$.  Therefore boost invariance selects the group orbit, not a unique function $F(E,\mathbf p)$ used to describe it.
+
+\subsection{The four operational roles of the invariant speed}
+On the complete standard massive orbit,
+\begin{equation}
+c_{\rm rest}^2
+:=\left.\frac{\partial E^2}{\partial |\mathbf p|^2}\right|_{\mathbf p=0}
+=c^2,
+\end{equation}
+and the group velocity is
+\begin{equation}
+\nabla_{\mathbf p}E=\frac{c^2\mathbf p}{E},
+\qquad
+\lim_{|\mathbf p|\to\infty}|\nabla_{\mathbf p}E|=c.
+\end{equation}
+Thus $c_{\rm rest}=c_{\rm asym}=c_{\rm boost}$ on the standard complete orbit.  Adding the null orbit of the same representation gives
+\begin{equation}
+E=c|\mathbf p|,
+\qquad c_{\rm cone}=c,
+\end{equation}
+so that, under the full stated hypotheses,
+\begin{equation}
+\boxed{c_{\rm rest}=c_{\rm asym}=c_{\rm cone}=c_{\rm boost}=c.}
+\label{eq:fourcs}
+\end{equation}
+This equality is partly global: $c_{\rm asym}$ presupposes an unbounded complete branch, while $c_{\rm cone}$ presupposes the null structure of the same representation.
+
+\subsection{Negative controls: the IR identity is weaker than Lorentz invariance}
+Consider
+\begin{equation}
+E^2=E_0^2+c^2p^2+\eta\frac{p^4}{\Lambda^2},
+\qquad \eta\neq0.
+\label{eq:quarticLV}
+\end{equation}
+The rest slope remains
+\begin{equation}
+\left.\frac{\partial E^2}{\partial p^2}\right|_0=c^2,
+\end{equation}
+so $E_0=m_{\rm in}c^2$ still holds under the IR definition.  Nevertheless, for
+\begin{equation}
+F=E^2-E_0^2-c^2p^2-\eta p^4/\Lambda^2,
+\end{equation}
+the standard infinitesimal boost gives
+\begin{equation}
+\frac{\delta F}{\delta v}
+=\frac{4\eta Ep^3}{c^2\Lambda^2},
+\end{equation}
+which is generically nonzero.  Hence the local mass--energy identity alone does not imply the full relativistic shell or global Lorentz invariance.
+
+A second negative control makes the representation boundary explicit.  Introduce nonlinear momentum coordinates
+\begin{equation}
+\Pi^0=E/c,
+\qquad
+\boldsymbol\Pi=\left(1+\alpha\frac{p^2}{\Lambda^2}\right)\mathbf p,
+\qquad \alpha\ge0,
+\end{equation}
+and let $\Pi$ transform linearly under Lorentz while $P$ transforms by conjugation with this invertible map.  The auxiliary quadratic invariant becomes, in the physical coordinates $E,\mathbf p$,
+\begin{equation}
+E^2-c^2p^2\left(1+\alpha\frac{p^2}{\Lambda^2}\right)^2=E_0^2.
+\label{eq:nonlinearshell}
+\end{equation}
+Thus the abstract group does not by itself determine a quadratic polynomial in arbitrary momentum coordinates.  The coordinate-independent object is the orbit and its stabilizer; the standard quadratic equation is tied to the standard linear vector coordinates.
+
+\section{Massless, spacelike, and multiple-shell controls}
+For the null orbit, $P^2=0$ gives
+\begin{equation}
+E=c|\mathbf p|,
+\end{equation}
+with group speed $c$ away from the apex.  There is no nonzero rest point, so Eq.~\eqref{eq:massshellmc2} is not derived by the massive rest-state argument.
+
+For a spacelike orbit,
+\begin{equation}
+E^2-c^2|\mathbf p|^2=-\mu^2c^4,
+\end{equation}
+there is no real ordinary rest state.  Frames with $E=0$ exist, the complete spacelike orbit is connected, and where $E\neq0$ the formal group speed satisfies $|\nabla_{\mathbf p}E|>c$.  This is a mathematical control only.
+
+Finally,
+\begin{equation}
+F=\bigl(E^2-c^2p^2-M_1^2\bigr)
+  \bigl(E^2-c^2p^2-M_2^2\bigr)
+\end{equation}
+is Lorentz invariant while describing two distinct levels when $M_1^2\neq M_2^2$.  If the constants coincide, the same shell acquires algebraic multiplicity.  This demonstrates why invariance of a zero-set is weaker than the single-orbit hypothesis of the common mass-shell lemma.
+
+\section{Third independent exact audit: common mass-shell lemma}
+A dedicated Codex audit dated 19 August 2026 independently tested the infinitesimal proof, the global orbit classification, the IR mass identification, massless and spacelike controls, shell multiplicity, Lorentz-violating deformations, nonlinear momentum coordinates, and the power-provenance claims.  Its verdict was
+\begin{equation}
+\boxed{\texttt{PASS\_WITH\_CORRECTIONS}}.
+\end{equation}
+The supplied symbolic audit is self-contained and reports 32/32 checks passed.  The artifact validator reports 21/21 checks passed; a fresh local rerun reproduced the validator exactly and reproduced the symbolic text modulo CRLF/LF line-ending normalization.  All SHA-256 entries in the supplied checksum file verified successfully.
+
+The most important correction is terminological but mathematically substantive: ``connected invariant shell'' must be replaced by ``single future-timelike orbit'' unless one separately proves the regularity, dimension, uniqueness, and transitivity conditions needed to identify the set with one orbit.  The audit also confirms that $E_0=m_{\rm in}c^2$ is an IR consequence rather than a standalone proof of Lorentz invariance, and that nonlinear coordinates on momentum space can preserve an abstract Lorentz action while making the dispersion nonquadratic.
+
+The ZIP supplied by Codex is internally complete on the originating Windows layout and its own fresh-extraction/validation markers are PASS.  Its archive members for the two log files use Windows backslashes (\texttt{logs\\...}) rather than portable forward-slash ZIP paths.  Common Unix \texttt{unzip} tools normalize these entries with a warning, but strict POSIX \texttt{zipfile} extraction can create literal backslashes in the filenames.  This is recorded as a cross-platform packaging portability issue, not a mathematical or dependency failure.  A normalized portable copy was produced during consolidation.
+
+\subsection{Minimal fail-closed formulation}
+The strongest audited theorem is therefore:
+\begin{quote}
+Let $c>0$ and let $SO^+(1,3)$ act on the chosen physical four-momentum coordinates $P=(E/c,\mathbf p)$ in the standard linear vector representation.  If the physical massive shell is the orbit of the future-timelike rest point $(E_0/c,\mathbf0)$ with $E_0>0$, then globally
+\[
+E^2-c^2|\mathbf p|^2=E_0^2,\qquad E>0.
+\]
+If, in addition, $m_{\rm in}$ is defined by the coefficient $|\mathbf p|^2/(2m_{\rm in})$ in the low-momentum expansion at the rest point, then locally
+\[
+E_0=m_{\rm in}c^2.
+\]
+\end{quote}
+The first line is a theorem about a group orbit in a specified representation and coordinate choice; the second is a local operational identification of inertial mass.
+
+
+
+\section{Post-v0.5.0 audit: translations, Poincare structure, and the deduction boundary}
+The post-v0.5.0 extension asks whether the linear four-momentum used in the common mass-shell lemma can itself be reconstructed from spacetime translations, and whether ordinary Poincare kinematics can be selected from weaker symmetry assumptions.  An independent fail-closed audit tested this chain with 48 exact symbolic checks and 20 exact geometric checks, together with manual theorem checks for the genuinely local/global differential-geometric statements.  The overall mathematical verdict is
+\begin{equation}
+\boxed{\texttt{PASS\_WITH\_CORRECTIONS}}.
+\end{equation}
+The corrections are not cosmetic.  They identify which arrows are theorems and which are assumptions, definitions, or reformulations of structure already present in the earlier note.
+
+\subsection{Translation additivity requires the diagonal action}
+Let $U_A(a)$ and $U_B(a)$ be strongly continuous unitary representations of the translation group on independent Hilbert spaces $\mathcal H_A$ and $\mathcal H_B$.  If the composite system is represented on $\mathcal H_A\otimes\mathcal H_B$ and the same translation acts diagonally,
+\begin{equation}
+U_{AB}(a)=U_A(a)\otimes U_B(a),
+\end{equation}
+then, with the usual domain qualifications for unbounded generators,
+\begin{equation}
+\boxed{\hat P^{AB}_\mu=
+\overline{\hat P^A_\mu\otimes I+I\otimes \hat P^B_\mu}}.
+\label{eq:additive-generator}
+\end{equation}
+For proper or generalized momentum eigenstates, the spectral label is therefore additive:
+\begin{equation}
+p^{AB}_\mu=p^A_\mu+p^B_\mu.
+\end{equation}
+The crucial boundary is that the abelian nature of translations does \emph{not} imply Eq.~\eqref{eq:additive-generator} by itself.  One may define an abelian one-parameter representation on the tensor product with a generator such as
+\begin{equation}
+G=P_A\otimes I+I\otimes P_B+\lambda P_A\otimes P_B,
+\end{equation}
+whose eigenvalues are not additive.  The ordinary coproduct
+\begin{equation}
+\Delta(P_\mu)=P_\mu\otimes 1+1\otimes P_\mu
+\end{equation}
+is therefore another language for the diagonal-action assumption, not a second independent derivation.
+
+A nonlinear momentum coordinate can also make an underlying additive law appear nonlinear.  If $K=f(P)$ is invertible and $P_{\rm tot}=P_A+P_B$, then
+\begin{equation}
+K_A\oplus K_B=f\!\left(f^{-1}(K_A)+f^{-1}(K_B)\right).
+\end{equation}
+Thus a nonlinear composition law alone is not evidence for a genuinely deformed multiparticle structure.  A genuinely nonprimitive coproduct is a separate possibility.
+
+\subsection{Interacting systems and asymptotic additivity}
+For interacting subsystems,
+\begin{equation}
+H_{\rm tot}=H_A\otimes I+I\otimes H_B+V_{AB},
+\end{equation}
+the total energy is not generally the sum of the isolated subsystem energies.  Subsystem observables can exchange energy and momentum through $V_{AB}$.  The clean additive statement applies to independent systems, or to asymptotically independent in/out states under the additional hypotheses required for scattering theory.  This distinction prevents the generator-level additivity of Eq.~\eqref{eq:additive-generator} from being misread as a universal decomposition of interacting energy.
+
+\subsection{Lorentz action on the translation generators}
+For the standard semidirect product law of Poincare transformations,
+\begin{equation}
+(a,\Lambda)(b,\Sigma)=(a+\Lambda b,\Lambda\Sigma),
+\end{equation}
+one has
+\begin{equation}
+U(\Lambda)U(a)U(\Lambda)^{-1}=U(\Lambda a).
+\end{equation}
+Differentiating at the identity gives the conventionally clean covariant-index statement
+\begin{equation}
+\boxed{
+U(\Lambda)\hat P_\nu U(\Lambda)^{-1}
+=\Lambda^\mu{}_{\nu}\hat P_\mu .}
+\label{eq:translation-lorentz}
+\end{equation}
+The generators therefore carry the dual representation to the translation parameters.  Raising indices with the Lorentz metric yields the equivalent vector statement, with the inverse matrix appearing according to the chosen active/passive convention.  Equation~\eqref{eq:translation-lorentz} is the preferred form because it does not hide these index and sign conventions.
+
+Infinitesimally, the corresponding $[J,P]$ commutator carries a convention-dependent overall sign according to the sign used in the exponential representation and whether one writes $UPU^{-1}$ or $U^{-1}PU$.  The group-level relation~\eqref{eq:translation-lorentz} is independent of that bookkeeping.  The substantive point is limited: once the standard Poincare semidirect product has been assumed, linear transformation of the translation generators is a representation-theoretic consequence, not a new physical postulate.  It does \emph{not} follow from an abstract relativity principle alone.
+
+\subsection{Translation symmetry and conservation}
+For a local field theory with no explicit coordinate dependence, Noether's theorem gives a translation current.  For the canonical tensor in a simple scalar model the exact off-shell identity has the schematic form
+\begin{equation}
+\partial_\mu T^\mu{}_{\nu}
+=({\rm EOM})\,\partial_\nu\phi,
+\end{equation}
+so that on solutions
+\begin{equation}
+\partial_\mu T^\mu{}_{\nu}=0.
+\end{equation}
+The total charge
+\begin{equation}
+P_\nu=\int d^3x\,T^0{}_{\nu}
+\end{equation}
+is conserved only when the relevant boundary flux vanishes (or when there is no boundary).  Thus the correct implication is
+\begin{equation}
+\boxed{\text{translation symmetry + equations of motion + boundary conditions}
+\Longrightarrow \text{conserved total }P_\nu .}
+\end{equation}
+The statement must not be strengthened to claim that symmetry alone is equivalent to the full equations of motion, nor should canonical, Belinfante, Hilbert, and improved stress tensors be identified pointwise merely because they can generate the same total charges under suitable conditions.
+
+\section{Poincare reconstruction and the de Sitter/anti-de Sitter control}
+\subsection{What an affine Poincare reconstruction actually assumes}
+On an affine spacetime with transformations
+\begin{equation}
+x' = \Lambda x+a,
+\end{equation}
+where translations form the global abelian normal subgroup $(\mathbb R^4,+)$ and $\Lambda\in SO^+(1,3)$ acts in the standard vector representation, the composition law is
+\begin{equation}
+(a,\Lambda)(b,\Sigma)=(a+\Lambda b,\Lambda\Sigma),
+\end{equation}
+so by definition
+\begin{equation}
+\boxed{G=\mathbb R^4\rtimes SO^+(1,3)=ISO^+(1,3).}
+\end{equation}
+This is a correct reconstruction of the Poincare group from specified ingredients, but it is not a derivation of those ingredients from homogeneity, isotropy, and relativity alone.  The affine structure, the four global translations, their abelianity, and the standard action of Lorentz on them are substantive inputs.
+
+\subsection{de Sitter and anti-de Sitter as exact negative controls}
+Homogeneous isotropic relativistic kinematics with a finite invariant speed need not be Poincare.  In de Sitter and anti-de Sitter kinematics, the local Lorentz sector is retained while the transvection generators obey, schematically,
+\begin{equation}
+\boxed{
+[P_\mu,P_\nu]
+=-\frac{\eta_{44}}{R_c^2}J_{\mu\nu},}
+\label{eq:dsads-translations}
+\end{equation}
+where $R_c$ is a curvature radius and the sign distinguishes the two cases under a fixed five-dimensional signature convention.  Therefore
+\begin{equation}
+\text{homogeneity + isotropy + relativity + }\kappa>0
+\not\Longrightarrow [P_\mu,P_\nu]=0.
+\end{equation}
+The Poincare algebra arises as the Inonu--Wigner contraction in which the curvature scale is sent to infinity and the structure constants in Eq.~\eqref{eq:dsads-translations} vanish.  The conclusion is fail-closed: selecting Poincare requires additional affine-flat structure; it is not selected by the Lorentz sector alone.
+
+\section{Flat affine structure: curvature, torsion, and local versus global claims}
+\subsection{Why curvature zero alone is insufficient}
+Let $\nabla$ be a $C^1$ affine connection with curvature $R^\rho{}_{\sigma\mu\nu}$ and torsion $T^\rho{}_{\mu\nu}$.  The audited local theorem is
+\begin{equation}
+\boxed{
+R^\rho{}_{\sigma\mu\nu}=0,
+\qquad
+T^\rho{}_{\mu\nu}=0
+\quad\Longleftrightarrow\quad
+\text{local affine coordinates with }\Gamma^\rho{}_{\mu\nu}=0,}
+\label{eq:flat-affine}
+\end{equation}
+on a sufficiently small contractible neighborhood.  The forward implication is immediate because curvature and torsion are tensors.  For the reverse implication, $R=0$ provides a local parallel frame; in such a frame
+\begin{equation}
+T(e_a,e_b)=-[e_a,e_b].
+\label{eq:torsion-anholonomy}
+\end{equation}
+Then $T=0$ makes the parallel frame commuting, and Frobenius/integrability yields coordinates in which those frame vectors are coordinate derivatives, so $\Gamma=0$.
+
+The two conditions are independent.  A connection can satisfy $R=0$ but $T\neq0$, in which case a parallel frame exists locally but is anholonomic; conversely, a torsion-free connection can have nonzero curvature.  Hence the shorthand ``flat'' must be qualified when working with general affine connections.
+
+\subsection{Parallelogram closure and the curvature/torsion separation}
+For a specific infinitesimal construction in which one follows a geodesic in direction $u$, parallel-transports the second direction $v$, and compares with the construction obtained by interchanging $u$ and $v$, the endpoint gap satisfies
+\begin{equation}
+q_1(\epsilon)-q_2(\epsilon)
+=-\epsilon^2 T(u,v)+O(\epsilon^3).
+\label{eq:torsion-gap}
+\end{equation}
+Thus torsion controls the leading translational closure defect for this specified construction.  Curvature instead appears as leading linear holonomy when a vector is parallel transported around the infinitesimal loop.  A coordinate parallelogram, by contrast, closes by construction and measures neither effect.  Equation~\eqref{eq:torsion-gap} should therefore be read as a precise procedural statement, not as an unrestricted slogan.
+
+\subsection{Three commutators that must not be conflated}
+The following objects are distinct:
+\begin{align}
+[P_\mu,P_\nu] &\quad\text{kinematic translation-generator algebra},\\
+[\partial_\mu,\partial_\nu] &\quad\text{coordinate vector fields, identically zero},\\
+[\nabla_\mu,\nabla_\nu] &\quad\text{connection-dependent covariant commutator}.
+\end{align}
+For example, on a scalar one has, under the stated convention,
+\begin{equation}
+[\nabla_\mu,\nabla_\nu]f=-T^\lambda{}_{\mu\nu}\partial_\lambda f,
+\end{equation}
+whereas on a vector curvature also appears.  Therefore $[P,P]=0$ must never be inferred merely from a coordinate identity, nor identified with $[\nabla,\nabla]=0$ in a general geometry.
+
+\subsection{Local flatness does not fix the global spacetime}
+Equation~\eqref{eq:flat-affine} is strictly local.  Vanishing curvature and torsion do not by themselves imply that the global manifold is $\mathbb R^4$, that the holonomy is trivial, or that a global translation group $\mathbb R^4$ acts freely and transitively.  Additional global hypotheses such as suitable simple connectivity and affine/geodesic completeness are required before the local affine structure can be promoted to the global Minkowski model used in the standard Poincare construction.
+
+\section{Circularity audit and epistemic classification}
+The post-v0.5.0 audit exposes an important limitation of the backward-reconstruction program.  The earlier kinematic construction already began from spacetime homogeneity with regularity assumptions yielding \emph{linear} inertial transformations.  Global linearity is itself an affine structure.  Consequently,
+\begin{equation}
+R=T=0\longrightarrow\text{affine coordinates}
+\longrightarrow[P,P]=0
+\longrightarrow\text{Poincare translations}
+\end{equation}
+is mathematically valid as a geometric consistency map, but relative to the v0.5.0 starting point it is not an independent derivation of affine flatness.  It largely makes explicit what the word ``linearity'' had already imported.
+
+The audit therefore separates the project into five epistemic categories:
+\begin{enumerate}
+\item \textbf{Theorems:} e.g. the local affine-flatness theorem, Noether conservation under its stated hypotheses, and orbit/Casimir consequences once the representation is fixed.
+\item \textbf{Geometric or topological inputs:} affine structure, translational flatness, global topology/completeness.
+\item \textbf{Representation-theoretic consequences:} transformation of translation generators, the quadratic Casimir, and the standard massive orbit.
+\item \textbf{Physical assumptions:} diagonal action on independent composites, selection of a future massive orbit, identification of translation generators with measured energy and momentum.
+\item \textbf{Definitions or reformulations:} primitive coproduct versus diagonal action, and the IR definition of inertial mass once the dispersion is known.
+\end{enumerate}
+This classification is now part of the claim boundary of the project.
+
+\section{Integrated minimal genealogy to the mass--energy relation}
+The strongest non-circular presentation is not a single uninterrupted derivation but a typed chain:
+\begin{center}
+\begin{minipage}{0.92\linewidth}
+\small
+\textbf{[GEOMETRIC INPUT]} $R=0$ and $T=0$ for a local affine connection
+\\[0.15em]$\Downarrow$ \textbf{[THEOREM]} local affine coordinates and a parallel commuting frame
+\\[0.15em]$\Downarrow$ \textbf{[GLOBAL INPUT]} suitable topology/completeness to obtain global affine $\mathbb R^4$
+\\[0.15em]$+$ \textbf{[PHYSICAL/EMPIRICAL INPUT]} $d=4$, Lorentz branch $\kappa>0$, time orientation
+\\[0.15em]$\Downarrow$ \textbf{[DEFINITION/STRUCTURE]} $ISO^+(1,3)=\mathbb R^4\rtimes SO^+(1,3)$ and $P_\mu$ as translation generators
+\\[0.15em]$\Downarrow$ \textbf{[REPRESENTATION THEORY]} Eq.~\eqref{eq:translation-lorentz} and quadratic Casimir $P^2$
+\\[0.15em]$+$ \textbf{[PHYSICAL ASSUMPTION]} one future-timelike massive orbit with $E_0>0$
+\\[0.15em]$\Downarrow$ \textbf{[REPRESENTATION THEORY]} $E^2-c^2|\mathbf p|^2=E_0^2$
+\\[0.15em]$+$ \textbf{[DEFINITION]} $m_{\rm in}$ from $E=E_0+|\mathbf p|^2/(2m_{\rm in})+O(|\mathbf p|^4)$
+\\[0.15em]$\Downarrow$ \textbf{[LOCAL CONSEQUENCE]} $E_0=m_{\rm in}c^2$.
+\end{minipage}
+\end{center}
+Two boundaries must remain visible.  First,
+\begin{equation}
+\boxed{
+\text{homogeneity + isotropy + relativity + }\kappa>0
+\not\Longrightarrow [P_\mu,P_\nu]=0,}
+\end{equation}
+because de Sitter and anti-de Sitter pass those weaker filters.  Second, once $ISO^+(1,3)$ and the standard physical momentum representation have been assumed, most of the downstream chain is representation theory plus an operational definition rather than new dynamics.
+
+\section{Fourth independent audit: post-v0.5.0 translation--Poincare chain}
+The independent audit supplied as \texttt{poincare\_translation\_audit\_bundle.zip} reports 68 exact checks over rational arithmetic: 48 symbolic and 20 geometric, with no numerical sampling.  The mathematical verdict is \texttt{PASS\_WITH\_CORRECTIONS}.  Its central corrections are incorporated above: abelianity alone does not imply multiparticle additivity; the translation--Lorentz relation should be stated with covariant indices to avoid convention ambiguity; Noether conservation is on-shell and boundary-dependent; de Sitter/anti-de Sitter block any derivation of Poincare from the Lorentz sector alone; and $R=0$ is insufficient without $T=0$ for local affine coordinates.
+
+A local re-validation reproduced all 68 mathematical checks and the artifact validator.  One cross-platform reproducibility defect was found in the supplied bundle: its stored audit logs use CRLF line endings, while direct execution on a Unix-like system rewrites them with LF.  The validator labels its comparison ``byte for byte'' but performs a text-mode newline-normalized comparison.  The semantic logs are identical, but their raw SHA-256 values change after such a rewrite.  The v0.6.0 project package therefore normalizes generated text artifacts to LF and treats byte-level reproducibility as a separate packaging gate from mathematical reproducibility.
+
+
+\section{Fifth audit: fiberwise Lorentz structure and the local mass-shell lemma}
+The post-v0.6.0 branch tests whether the global Poincare group is actually required for the local rest-energy relation.  The answer is negative.  The minimal setting is one Lorentzian fiber, not a globally translation-invariant spacetime.
+
+\subsection{Cotangent-fiber formulation and observer decomposition}
+Let $(M,g)$ be a smooth, time-oriented Lorentzian spacetime with signature $(+---)$, let $x\in M$, and let $u\in T_xM$ be a future observer normalized by
+\begin{equation}
+ g_x(u,u)=c^2.
+\end{equation}
+The Hamiltonian formulation makes the cotangent fiber the natural home of momentum.  Write the physical kinetic covector as $\pi\in T_x^*M$ and define
+\begin{equation}
+ E_u:=\pi(u).
+\end{equation}
+Using the metric isomorphism, $\pi^\sharp\in T_xM$ decomposes uniquely as
+\begin{equation}
+ \pi^\sharp=\frac{E_u}{c^2}u+s,
+ \qquad g_x(s,u)=0,
+\end{equation}
+with measured spatial momentum magnitude
+\begin{equation}
+ |\mathbf p_u|^2:=-g_x(s,s)\ge0.
+\end{equation}
+Consequently,
+\begin{equation}
+ \boxed{g_x^{-1}(\pi,\pi)=\frac{E_u^2}{c^2}-|\mathbf p_u|^2.}
+\end{equation}
+This identity is algebra in a single fiber.  It requires neither a spacetime translation group nor a comparison between distinct fibers.
+
+\subsection{Fiberwise Lorentz / Local Mass-Shell Lemma}
+Assume that the physical sector under consideration occupies a single future timelike standard shell
+\begin{equation}
+ \boxed{g_x^{-1}(\pi,\pi)=\frac{E_0(x)^2}{c^2}},
+ \qquad E_0(x)>0.
+\end{equation}
+Equivalently, the shell is one orbit of the proper orthochronous Lorentz group of the fiber at fixed positive norm.  Combining this input with the observer decomposition gives, for every future unit observer at $x$,
+\begin{equation}
+ \boxed{E_u^2-c^2|\mathbf p_u|^2=E_0(x)^2.}
+\end{equation}
+On the positive branch,
+\begin{equation}
+ E_u=E_0+\frac{c^2|\mathbf p_u|^2}{2E_0}
+      -\frac{c^4|\mathbf p_u|^4}{8E_0^3}+O(p^6).
+\end{equation}
+If inertial mass is defined operationally and locally by
+\begin{equation}
+ E_u=E_0+\frac{|\mathbf p_u|^2}{2m_{\rm in}}+O(p^4),
+\end{equation}
+then
+\begin{equation}
+ \boxed{E_0(x)=m_{\rm in}(x)c^2.}
+\end{equation}
+The first boxed equation is a reformulation of the assumed shell in observer components; the second follows algebraically once the IR mass definition is adopted.  Neither is a dynamical derivation of the shell itself.
+
+\subsection{The physical momentum: canonical versus kinetic}
+In gauge backgrounds, the lemma must not be stated for an arbitrary canonical momentum.  For a charged point particle with action convention
+\begin{equation}
+ S=-mc\int ds+q\int A_\mu dx^\mu,
+\end{equation}
+the canonical and kinetic covectors satisfy
+\begin{equation}
+ P_\mu=\pi_\mu+qA_\mu,
+ \qquad
+ \pi_\mu=P_\mu-qA_\mu.
+\end{equation}
+Under a gauge transformation the canonical covector shifts, whereas $\pi$ is the gauge-invariant mechanical momentum.  The standard shell is therefore
+\begin{equation}
+ \boxed{g^{\mu\nu}\pi_\mu\pi_\nu=m^2c^2,}
+\end{equation}
+not, in general, the same equation with $P_\mu$.  This is a mandatory claim boundary for the local lemma.
+
+\section{Global counterexamples and the local/global separation}
+\subsection{de Sitter and anti-de Sitter}
+The global de Sitter and anti-de Sitter isometry algebras provide an exact negative control.  With transvections normalized by a curvature radius $R_c$,
+\begin{equation}
+ [P_\mu,P_\nu]=\pm\frac{1}{R_c^2}J_{\mu\nu}\ne0
+\end{equation}
+at finite $R_c$.  Nevertheless each tangent/cotangent fiber is Lorentzian and supports the same local timelike hyperboloid.  Hence a standard minimally coupled point particle obeys the local mass shell and $E_0=m_{\rm in}c^2$ despite the failure of global commuting translations.  This proves that
+\begin{equation}
+ \boxed{[P_\mu,P_\nu]=0\ \text{is not a prerequisite of the local rest-energy relation}.}
+\end{equation}
+
+\subsection{FLRW and the absence of a global conserved energy}
+For a spatially flat FLRW line element,
+\begin{equation}
+ ds^2=c^2dt^2-a(t)^2d\mathbf x^2,
+\end{equation}
+a comoving orthonormal tetrad gives the physical spatial momentum $\mathbf p_{\rm phys}\propto a^{-1}$.  At every event,
+\begin{equation}
+ E_{\rm local}^2-c^2|\mathbf p_{\rm phys}|^2=E_0^2
+\end{equation}
+for a standard massive shell.  If $\dot a\ne0$, however, $\partial_t$ is not a timelike Killing field of the full spacetime and the comoving local energy need not be conserved.  Thus
+\begin{equation}
+ \boxed{\text{well-defined local energy}\ \not\Rightarrow\ \text{globally conserved energy}.}
+\end{equation}
+The rest-energy relation belongs to the former notion.
+
+\subsection{Local observer energy versus Killing energy}
+For a local observer $u$ and, when available, a Killing field $\xi$,
+\begin{equation}
+ E_u=\pi(u),\qquad E_\xi=\pi(\xi).
+\end{equation}
+The first is always a local observable once $u$ and $\pi$ are specified.  The second is a conserved quantity only under the appropriate dynamical and symmetry assumptions.  They are generally different even in flat spacetime when $u$ is not aligned with $\xi$.
+
+\section{Connection, curvature, torsion, and nonmetricity}
+The local minimal shell
+\begin{equation}
+ g_x^{-1}(\pi,\pi)=E_0(x)^2/c^2
+\end{equation}
+uses the metric at one point.  The connection governs how momenta are compared and evolved between distinct fibers.  For a parallel-transported momentum vector $p$ along a curve with tangent $v$,
+\begin{equation}
+ \frac{d}{d\lambda}g(p,p)=(\nabla_v g)(p,p).
+\end{equation}
+Therefore metric compatibility preserves the norm under parallel transport even if torsion is present, while nonmetricity generally changes it.  With $Q=-\nabla g$,
+\begin{equation}
+ \frac{d}{d\lambda}g(p,p)=-Q(v,p,p).
+\end{equation}
+The correct separation is thus
+\begin{equation}
+ \boxed{\text{shell defined in a fiber}\quad\neq\quad\text{shell preserved along a worldline}.}
+\end{equation}
+Curvature does not, by itself, force an algebraic modification of the minimally coupled point-particle shell; nonminimal curvature couplings, Lorentz-violating backgrounds, spin/extended structure, higher derivatives, or medium effects can do so and must be treated as additional dynamics.
+
+\section{Three-level hierarchy: IR dispersion, fiberwise Lorentz, global Poincare}
+The combined audits now support a sharper hierarchy.
+
+\paragraph{Level 1: regular isotropic infrared dispersion.}
+If
+\begin{equation}
+ E^2=E_0^2+v_2^2p^2+O(p^4),\qquad E_0>0,
+\end{equation}
+then Taylor expansion and the IR definition of inertial mass give
+\begin{equation}
+ \boxed{E_0=m_{\rm in}v_2^2.}
+\end{equation}
+This level does not require Lorentz invariance.
+
+\paragraph{Level 2: standard Lorentzian shell in one fiber.}
+The standard timelike shell fixes $v_2=c$ and therefore
+\begin{equation}
+ \boxed{E_0=m_{\rm in}c^2.}
+\end{equation}
+It also identifies the same $c$ with the local quadratic Lorentz norm and null cone.  It still does not supply global translations, global conserved charges, or asymptotic scattering states.
+
+\paragraph{Level 3: global Poincare structure.}
+In global Minkowski spacetime, additional assumptions produce four commuting translation generators, the global Poincare Casimir, Noether conservation under the equations of motion and boundary conditions, additive multiparticle momentum under the diagonal action, and the standard asymptotic scattering framework when its further hypotheses hold.  These are logically later structures; they are not prerequisites of the local rest-energy identity.
+
+\subsection{A decisive negative control at Level 1}
+The modified local dispersion
+\begin{equation}
+ E^2=E_0^2+c^2p^2+\eta\frac{p^4}{\Lambda^2},\qquad \eta\ne0,
+\end{equation}
+still has
+\begin{equation}
+ E=E_0+\frac{c^2p^2}{2E_0}+O(p^4)
+\end{equation}
+and hence the same IR identity $E_0=m_{\rm in}c^2$, while the full shell is not invariant under the standard Lorentz boosts.  Therefore
+\begin{equation}
+ \boxed{E_0=m_{\rm in}c^2\ \not\Rightarrow\ \text{full local Lorentz invariance}.}
+\end{equation}
+The formula probes the two-jet of the dispersion at rest, not its complete high-momentum structure.
+
+\section{Revised minimal genealogy and the new stopping point}
+The minimal route to the local rest-energy relation is now shorter than the global v0.6.0 genealogy:
+\begin{center}
+\begin{minipage}{0.91\linewidth}
+\small
+\textbf{LOCAL GEOMETRIC ASSUMPTION:} a time-oriented Lorentzian fiber $(T_xM,g_x)$\\
+$\quad+$ \textbf{PHYSICAL INTERPRETATION:} a measurable kinetic momentum $\pi$\\
+$\quad+$ \textbf{DYNAMICAL ASSUMPTION:} one future timelike standard shell
+$g_x^{-1}(\pi,\pi)=E_0(x)^2/c^2$\\[0.3em]
+$\Downarrow$\\[-0.2em]
+\textbf{FIBERWISE THEOREM / REFORMULATION:}
+$E_u^2-c^2|\mathbf p_u|^2=E_0(x)^2$ for every local observer $u$\\[0.3em]
+$\quad+$ \textbf{DEFINITION:} $m_{\rm in}$ from the quadratic IR coefficient\\[0.3em]
+$\Downarrow$\\[-0.2em]
+\textbf{LOCAL ALGEBRAIC CONSEQUENCE:}
+$\boxed{E_0(x)=m_{\rm in}(x)c^2}$.
+\end{minipage}
+\end{center}
+Global Poincare symmetry is absent from this minimal chain.  Its role is to organize global conservation, composition, Casimir labels, and scattering, not to create the local decomposition of rest energy.
+
+The strong retro-derivation now stops one step earlier than the v0.6.0 global boundary.  The Lorentzian metric makes the standard shell possible and organizes it once selected, but it does not by itself explain why a material sector realizes precisely that shell, why the quadratic coefficient equals the universal local null-cone speed, or why particular positive mass parameters are realized.  The principal open question is therefore
+\begin{quote}
+\textbf{Why does physical matter realize the standard Lorentzian timelike mass shell, rather than a different regular local dispersion compatible with the same infrared coefficient?}
+\end{quote}
+This is the correct next branch for the recursive audit.
+
+\section{Fifth independent fail-closed audit: fiberwise mass shell}
+The external audit of the post-v0.6.0 branch returned \textbf{PASS\_WITH\_CORRECTIONS}.  It executed 12 exact symbolic and 12 exact geometric checks, with no floating-point sampling used as proof.  The required fresh-extraction package gates also passed: self-containment, fresh rerun, byte-identical LF logs using raw-byte comparison, checksum validity after rerun, portable ZIP paths, and artifact validation.
+
+Its decisive corrections are incorporated in the preceding sections: the standard shell is a local \emph{dynamical assumption}; the mass shell should be formulated naturally on $T^*M$; gauge backgrounds require the kinetic rather than naked canonical momentum; the local shell must be separated from its preservation under transport; and the claim is exact for stable minimally coupled point particles but must not be universalized without qualification to unstable particles, arbitrary QFT states, nonminimal sectors, or quasiparticles.
+
+
+\section{Sixth independent fail-closed audit: worldline uniqueness and constraints}
+An external A1/A2 audit independently re-read the v0.7.0 baseline and tested the worldline and Hamiltonian steps with 18 exact symbolic and 18 exact constraint checks.  The verdict is \texttt{PASS\_WITH\_CORRECTIONS}.  The restricted worldline theorem of Sec.~\ref{sec:worldline-theorem} passes, but its epistemic status is \emph{selection by restricting theory space}.  The audit explicitly confirms that preferred tensors, Finsler structures, one-form interactions, curvature-dependent effective masses, spin/internal structure, and higher worldline derivatives evade the theorem by leaving the declared class.  It also confirms that a Hamiltonian constraint is not forced to be quadratic and that regular defining functions of the same shell need not be unique.
+
+The old v0.7.0 label \emph{DYNAMICAL ASSUMPTION: standard shell} can therefore be replaced, in the classical massive spinless point-particle sector only, by the visible set of dynamical-class assumptions used in Sec.~\ref{sec:worldline-theorem}.  This is a genuine conditional backward step because the shell is obtained from the Legendre image rather than inserted as its own equation.  It is not an unconditional explanation: the remaining physical input is why matter realizes this specific metric-ultralocal, structureless, first-order class.
+
+
+\section{Wigner-orbit mass-shell corollary: a minimal route to shell geometry}
+\label{sec:orbit-shell-v090}
+Let $V^*$ be a real $d$-dimensional Lorentz vector space, $d\ge2$, with time orientation and dual quadratic form
+\begin{equation}
+ q(p)=\eta^{-1}(p,p).
+\end{equation}
+Let $G=SO^+(1,d-1)$ act on the \emph{physical momentum variables} in the standard linear dual representation, and let
+\begin{equation}
+ T^+=\{p\in V^*:q(p)>0,\ p\ \text{future}\}.
+\end{equation}
+The orbit classification used below is standard in the Wigner classification of Poincare representations: positive-mass one-particle momenta lie on future timelike hyperboloids, and the rest representative has rotational little group~\cite{wigner1939,weinberg1995}.  The statement below is therefore not claimed as a new physical theorem.  It is retained as a fail-closed geometric corollary that makes the connectedness, embeddedness and codimension assumptions explicit.
+
+\paragraph{Wigner-orbit mass-shell corollary.}
+If $\Sigma\subset T^+$ is nonempty, connected, $G$-invariant, and a $C^1$ embedded boundaryless hypersurface of codimension one, then there is a unique $K>0$ such that
+\begin{equation}
+ \boxed{\Sigma=H_K^+=\{p:q(p)=K,\ p\ \text{future}\}.}
+ \label{eq:orbit-theorem-v090}
+\end{equation}
+For a rest representative $p_K=\sqrt K\,e^0$, the stabilizer is $SO(d-1)$, hence
+\begin{equation}
+ \dim(G\cdot p_K)=\frac{d(d-1)}2-\frac{(d-1)(d-2)}2=d-1.
+\end{equation}
+The group is transitive on $H_K^+$, and the map
+\begin{equation}
+ \mathbf p\longmapsto \bigl(\sqrt{K+|\mathbf p|^2},\mathbf p\bigr)
+\end{equation}
+exhibits $H_K^+$ as a connected embedded hypersurface.  For any $p\in\Sigma$, invariance gives $G\cdot p\subset\Sigma$; equality of tangent dimensions makes the orbit open in $\Sigma$.  Since the orbits partition $\Sigma$ into disjoint open subsets, connectedness forces a single orbit.  No closedness or properness assumption is needed for this proof.
+
+This corollary is narrower and more precise than the older shorthand ``connected invariant shell''.  It assumes the existence, causal type, dimension, embeddedness and connectedness of a physical dispersion hypersurface, as well as the standard linear momentum representation.  What it derives is the \emph{shape} of that component.  The value $K$, the existence of the shell, its species assignment and its dynamical stability remain inputs.  Its novelty status in this project is \texttt{KNOWN\_RESULT\_REDERIVED}: the orbit classification itself is standard; the RPIA contribution is the explicit provenance/circularity ledger and the preservation of negative controls.
+
+Writing $K=E_0^2/c^2$ gives the observer decomposition
+\begin{equation}
+ E^2-c^2|\mathbf p|^2=E_0^2,
+\end{equation}
+and therefore, on the positive branch,
+\begin{equation}
+ E=E_0+\frac{c^2|\mathbf p|^2}{2E_0}+O(|\mathbf p|^4).
+\end{equation}
+Defining $m_{\rm in}$ independently through the coefficient $|\mathbf p|^2/(2m_{\rm in})$ then yields the already audited local consequence
+\begin{equation}
+ \boxed{E_0=m_{\rm in}c^2.}
+\end{equation}
+The Wigner-orbit corollary therefore moves the quadratic \emph{form} of a regular connected massive shell downstream of linear Lorentz orbit structure, but does not derive its invariant level.
+
+\subsection{Invariant defining functions, higher powers and multishells}
+Every scalar $G$-invariant function on $T^+$ factors through the orbit invariant,
+\begin{equation}
+ F(p)=f(q(p)).
+\end{equation}
+Consequently,
+\begin{equation}
+ F^{-1}(0)\cap T^+=\bigcup_{K\in Z_f\cap(0,\infty)}H_K^+.
+\end{equation}
+This separates the geometry of an orbit from the printed algebraic degree of a defining function.  For example,
+\begin{equation}
+ F=q-a+\alpha\frac{q^2}{\Lambda^2}
+\end{equation}
+is quartic in momentum components, but each simple positive root in $z=q$ gives an ordinary hyperboloid $H_z^+$.  Depending on the roots, the same invariant function can define no massive shell, one shell, or several disconnected shells.  A multiple root can make $dF=0$ on an otherwise geometrically regular shell.
+
+Similarly, if $Q=q-K$, the functions $Q$, $Q^2$ and $Q^3$ share the same zero set, but $Q^n$ with $n\ge2$ is a singular defining function there.  Thus an increased power may encode root multiplicity or a singular constraint representative rather than a new physical momentum geometry.  This sharpens the RPIA rule that exponent provenance must be reconstructed rather than inferred from algebra alone.
+
+\subsection{Linear-representation boundary: nonlinear coordinates and curved momentum space}
+Equation~\eqref{eq:orbit-theorem-v090} requires the standard linear representation on the chosen physical momenta.  An invertible nonlinear relabeling $P=\Phi(k)$ transports the Lorentz action to
+\begin{equation}
+ k\longmapsto\Phi^{-1}(\Lambda\Phi(k)),
+\end{equation}
+so a quadratic shell in $P$ may appear nonquadratic in $k$.  This may be a passive coordinate change rather than new physics.  Conversely, deformed-relativity constructions can treat the nonlinear variables, composition law or momentum-space geometry as physical.  In that case the theorem above does not apply unchanged; one must classify the orbits and Casimir of the actual action.  DSR provides a standard logical control~\cite{magueijo2002}, while relative-locality frameworks explicitly allow curved momentum-space geometry~\cite{relativeLocality2011}.  The abstract Lorentz group alone therefore does not imply a quadratic shell in arbitrary momentum variables.
+
+\section{Two complementary routes to the standard massive shell}
+\label{sec:two-routes-v090}
+The v0.8.0 worldline theorem and the Wigner-orbit corollary answer different questions and should not be collapsed into one argument.
+
+\begin{center}
+\begin{tabular}{>{\raggedright\arraybackslash}p{0.24\textwidth}>{\raggedright\arraybackslash}p{0.34\textwidth}>{\raggedright\arraybackslash}p{0.34\textwidth}}
+\toprule
+ & \textbf{Route O: orbit} & \textbf{Route W: worldline}\\
+\midrule
+Primary input & Linear Lorentz momentum representation plus an existing connected embedded timelike dispersion hypersurface & Selected point-particle, spinless, first-order, exact-reparametrization, full-Lorentz, metric-ultralocal action class\\
+What is derived & Global shape $q=K$ of the connected shell component & Square-root action, equations of motion structure and shell as Legendre image\\
+What remains assumed & Existence of shell, its regularity/topology, causal branch and $K$ & Theory-class selection, species coefficient and scope of the point-particle approximation\\
+Main strength & Minimal classification of shell geometry & Conditional dynamical construction of the shell\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Route O is mathematically more economical for the \emph{shape of a shell already admitted}, but its orbit-classification core is standard Wigner/Poincare representation theory rather than a novel result of this project.  Route W contains more dynamical content and can explain, within its restricted theory class, why such a shell appears as the image of the Legendre map.  Neither route explains why nature chooses the common Lorentzian structure in the first place.
+
+\section{Multi-sector common-c consistency theorem}
+\label{sec:common-c-v090}
+Consider standard isotropic shells for sectors $i$,
+\begin{equation}
+ F_i(E,\mathbf p)=E^2-c_i^2|\mathbf p|^2-E_{0,i}^2=0.
+\end{equation}
+Assume the \emph{same physical} $(E,\mathbf p)$ coordinates and normalization for all sectors, and one exact standard linear infinitesimal boost with invariant-speed parameter $c_*$,
+\begin{equation}
+ \delta E=-u p_x,\qquad \delta p_x=-u\frac{E}{c_*^2}.
+\end{equation}
+Tangency to sector $i$ gives
+\begin{equation}
+ \delta F_i=-2uEp_x\left(1-\frac{c_i^2}{c_*^2}\right).
+\end{equation}
+For generic shell points with $Ep_x\neq0$, exact invariance therefore requires
+\begin{equation}
+ \boxed{c_i^2=c_*^2,\qquad c_i,c_*>0\ \Longrightarrow\ c_i=c_*.}
+ \label{eq:common-c-v090}
+\end{equation}
+Thus one common exact standard Lorentz structure forces one common limiting coefficient for standard quadratic sectors.  This is a \emph{consistency theorem}, not a derivation of why all sectors share that representation or of the numerical value of $c_*$.  It would be circular to insert $c_*$ into the shared boost law and then claim that symmetry created an invariant speed from nothing.
+
+\subsection{Interaction is not sufficient; RG alignment is a known model-dependent route}
+A simple two-sector field theory provides a negative control:
+\begin{equation}
+ \mathcal L=\frac12(\partial_t\phi)^2-\frac{c_\phi^2}{2}|\nabla\phi|^2
+ +\frac12(\partial_t\chi)^2-\frac{c_\chi^2}{2}|\nabla\chi|^2
+ -\lambda\phi^2\chi^2.
+\end{equation}
+For $c_\phi\neq c_\chi$ the fields interact locally and can retain translation and rotation symmetry, but no one standard Lorentz boost leaves both kinetic operators invariant.  Hence
+\begin{equation}
+ \boxed{\text{interaction alone}\ \not\Rightarrow\ c_\phi=c_\chi.}
+\end{equation}
+This statement is retained only as a \emph{non-sufficiency control}, not as a central no-go.  The more informative question is dynamical.  Nielsen--Ninomiya already found a flow toward improved Lorentz covariance in a noncovariant Yang--Mills model~\cite{nielsen1978}; Chadha--Nielsen explicitly proposed Lorentz invariance as an infrared-attractive phenomenon and calculated beta functions in a noncovariant electrodynamics model~\cite{chadha1983}.  Anber--Donoghue later studied theories with distinct limiting velocities and showed explicitly that interactions can make those velocities run toward a common low-energy value, normally only logarithmically, with special constructions permitting faster running~\cite{anber2011,anber2011running}.  The open issue for this project is therefore not whether RG alignment can occur, but whether a realistic mechanism is sufficiently rapid, universal and natural without severe tuning; the general naturalness problem for small Lorentz violation is well known~\cite{collins2004}.
+
+\subsection{Common metric, effective metrics and the unit-independent content}
+If all standard minimally coupled sectors share one local Lorentzian metric and its standard kinetic cone, they share one $c$ by construction.  But different modes can instead possess distinct effective metrics or principal symbols, so ``each sector is Lorentzian'' does not imply ``all sectors share one Lorentzian cone.''  The immediate foundational question is therefore
+\begin{quote}
+Why do all observed fundamental matter sectors share one Lorentzian cone/metric to the accuracy tested?
+\end{quote}
+If two sectors had limiting speeds $c_i$ and $c_j$, a common change of length/time units could set one speed to unity but could not remove the dimensionless ratio
+\begin{equation}
+ r_{ij}=\frac{c_i}{c_j}.
+\end{equation}
+The equality $r_{ij}=1$ is unit-independent physical content.  This observation is standard dimensional analysis and appears explicitly in multi-velocity effective-field-theory settings; it is not claimed as a discovery of the present audit~\cite{hermele2007}.  By contrast, the decimal value $299\,792\,458\,\mathrm{m/s}$ is unit-dependent.  This distinction will be mandatory in the terminal closure task concerning how the invariant-speed structure is physically fixed without presupposing SI rods and clocks.
+
+\section{Seventh independent fail-closed audit: Lorentz orbits and common c}
+The post-v0.8.0 mathematical audit returned \texttt{PASS\_WITH\_CORRECTIONS}.  It verified the orbit-geometric statement with the embeddedness, codimension, timelike-sector and connectedness hypotheses made explicit; confirmed that $K$ and shell existence are not selected by symmetry; and proved the common-$c$ corollary only under a shared standard linear momentum representation and normalization.  A later prior-art review changes only the \emph{novelty classification}: the orbit classification is standard Wigner/Poincare representation theory~\cite{wigner1939,weinberg1995}, so manuscript language must not imply discovery of that structure.
+
+The executable bundle reports 22/22 exact symbolic checks and 22/22 orbit/geometric checks, with the topological steps separately marked as manual theorem checks.  Those tests remain evidence of independent rederivation/correctness, not priority.  The audit's reproducibility contract claims deterministic contents and byte-identical logs after fresh extraction, while explicitly declining a cross-platform byte-identity claim for the compressed ZIP itself.  These distinctions are adopted here.
+
+
+\section{Prior-art and novelty correction}
+\label{sec:prior-art-v091}
+The mathematical audits in v0.9.0 were fail-closed on correctness but did not yet include a comparably strict historical-priority gate.  This corrective release adds that gate and revises the novelty labels accordingly.
+
+\begin{center}
+\begin{tabular}{>{\raggedright\arraybackslash}p{0.28\textwidth}>{\raggedright\arraybackslash}p{0.25\textwidth}>{\raggedright\arraybackslash}p{0.39\textwidth}}
+\toprule
+\textbf{Result/route} & \textbf{Novelty label} & \textbf{Reason}\\
+\midrule
+Massive Lorentz momentum hyperboloid / little-group classification & \texttt{KNOWN\_RESULT\_}\newline\texttt{REDERIVED} & Standard Wigner classification of Poincare one-particle representations; modern textbook treatment in Weinberg~\cite{wigner1939,weinberg1995}.\\
+Connected codim-1 invariant hypersurface $\Rightarrow$ one timelike orbit & \texttt{KNOWN\_RESULT\_}\newline\texttt{REDERIVED} & Immediate geometric corollary of the standard orbit foliation plus embeddedness/connectedness; retained for its explicit fail-closed hypotheses, not novelty.\\
+Common exact standard boost $\Rightarrow c_i=c_*$ for standard quadratic sectors & \texttt{NOVELTY\_NOT\_}\newline\texttt{ESTABLISHED} & Elementary consistency/tangency calculation; no originality claim is made pending a dedicated prior-art search.\\
+RG flow toward emergent Lorentz invariance / common limiting velocity & \texttt{KNOWN\_RESULT} & Explicit precedents include Nielsen--Ninomiya, Chadha--Nielsen and Anber--Donoghue~\cite{nielsen1978,chadha1983,anber2011,anber2011running}.\\
+Dimensionless ratio $c_i/c_j$ survives unit rescaling & \texttt{KNOWN\_RESULT} & Standard dimensional-analysis fact; explicit multi-velocity EFT use predates this audit~\cite{hermele2007}.\\
+Terminal question about dimensional $c$ versus physical content & \texttt{KNOWN\_DEBATE} & Duff--Okun--Veneziano explicitly disagree on the number/status of dimensionful fundamental constants~\cite{duff2002}; later work continues the debate~\cite{matsas2007,matsas2023}.\\
+Integrated RPIA genealogy and typed provenance ledger & \texttt{NOVELTY\_NOT\_}\newline\texttt{ESTABLISHED} & May be useful as a synthesis/method, but originality requires a separate literature search for comparable inverse-genealogy frameworks.\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The default rule for every future claim is now:
+\begin{equation}
+\boxed{\texttt{NOVELTY\_NOT\_ESTABLISHED}}
+\end{equation}
+until a dedicated prior-art search checks historical sources, modern equivalent terminology and standard textbooks.  Mathematical correctness and novelty are independent gates.  A result may remain central to the RPIA genealogy even when it is entirely standard.
+
+\subsection{Naturalness replaces the crude interaction no-go as the richer problem}
+The statement ``interaction alone does not logically force equal limiting speeds'' remains correct but weak.  The literature shows a more informative structure: interacting theories can possess RG flows toward Lorentz-symmetric infrared behavior, while the approach can be too slow to account naturally for very tight experimental bounds.  Chadha--Nielsen present the infrared-attractor idea explicitly~\cite{chadha1983}; Anber--Donoghue calculate multi-velocity running and find generic logarithmic convergence together with faster special constructions~\cite{anber2011}; Collins et al.\ emphasize the fine-tuning/naturalness problem that generic high-scale Lorentz violation can induce at low energy~\cite{collins2004}.  Therefore the future RG branch is a \emph{replication, rate and naturalness audit}, not a search for the already-known possibility of velocity alignment.
+
+\subsection{Terminal unit gate: Duff--Okun--Veneziano first}
+The terminal closure task must begin by testing whether a dimensionful numerical value of $c$ is a physical datum that requires a dynamical origin at all.  Duff argues that dimensionful constants may be conversion factors tied to unit conventions and advocates zero fundamental dimensionful constants, while Okun and Veneziano defend different counts~\cite{duff2002}.  Subsequent literature has continued to defend alternative counts and formulations~\cite{matsas2007,matsas2023}.  The project must therefore treat ``what fixes $299\,792\,458\,\mathrm{m/s}$?'' as potentially ill-posed.  Only unit-independent structure left after this gate---for example common causal cones, dimensionless ratios or invariant phase relations---is eligible for the later cycles/oscillations hypothesis.
+
+\section{Revised dual-route genealogy and current research boundary}
+The minimal shell-shape route and the richer dynamical route can now be written side by side:
+\begin{equation}
+\boxed{\begin{gathered}
+\text{standard linear Lorentz momentum fiber}\\
++\ \text{connected embedded timelike shell}\\
+\Downarrow\quad\text{ORBIT THEOREM}\\
+q=K
+\end{gathered}}
+\qquad
+\boxed{\begin{gathered}
+\text{selected metric-ultralocal worldline class}\\
+\Downarrow\\
+L=-\mu c\sqrt{g(\dot x,\dot x)}\\
+\Downarrow\\
+q=\mu^2c^2
+\end{gathered}}
+\end{equation}
+Both routes then feed the same local observer decomposition and IR definition yielding $E_0=m_{\rm in}c^2$ in their common massive scope.
+
+For multiple standard sectors there is a further conditional arrow,
+\begin{equation}
+\boxed{\text{same exact linear Lorentz representation/metric}}
+\Longrightarrow
+\boxed{c_i=c_*\ \text{for every standard sector}},
+\end{equation}
+but this does not explain the shared premise.  The main research boundary is therefore moved to
+\begin{quote}
+\textbf{Why do all fundamental matter sectors share one Lorentzian cone/metric, rather than sector-dependent effective cones or nonlinear momentum geometries?}
+\end{quote}
+This question is logically prior to the terminal closure question about how the invariant-speed conversion is fixed relationally without human units.
+
+
+\section{What has and has not been established}
+\subsection{Supported conditional conclusions}
+\begin{itemize}
+\item Within the assumed reciprocal boost family, closure yields $w=(u+v)/(1+\kappa uv)$ and a universal $\kappa$ for nonzero boosts in that family.
+\item The branches $\kappa>0,=0,<0$ are hyperbolic, parabolic, and elliptic respectively; excluding $\kappa<0$ requires additional physical input.
+\item On $\kappa_K>0$, $c_*^2=1/\kappa_K$.
+\item Given $S=-\mu\int d\tau$ and defining $m$ through the Newtonian kinetic term, $E_0=m/\kappa_K=mc_*^2$.
+\item For constant-coefficient coupled first-order fields, $M^2=\alpha\beta I$ and a real characteristic speed satisfies $v^2=1/(\alpha\beta)$ only when $\alpha\beta>0$.
+\item In source-free vacuum Maxwell theory, the wave derivation additionally uses $\nabla\cdot\mathbf E=\nabla\cdot\mathbf B=0$.
+\item Common covariance of the scalar electromagnetic wave operator under the kinematic boosts forces $\kappa_{EM}=\kappa_K$ for nontrivial boosts.
+\item The RPA/RPIA is useful as a provenance ledger: powers can arise from scalar repetition, bilinear norms, operator composition, repeated differentiation, geometric scaling, or perturbative inheritance.
+\item For one vector in the standard real Lorentz representation, the global polynomial scalar invariant ring is generated by $q$; homogeneous even invariants are $Cq^k$ and homogeneous odd invariants vanish.
+\item A generic nondegenerate isotropic cubic does not admit the audited continuous linear time--space mixing; a quartic admits it only on $B^2=4AC$, where it reduces to a scalar multiple of a quadratic square.
+\item In the standard linear four-momentum representation, the orbit of a future-timelike rest point is globally $E^2-c^2|\mathbf p|^2=E_0^2$; defining IR inertial mass at that rest point gives $E_0=m_{\rm in}c^2$.
+\item On the complete standard orbit, $c_{\rm rest}=c_{\rm asym}=c_{\rm boost}$; including the null orbit of the same representation gives $c_{\rm cone}=c$.
+\item The shell geometry is not a unique defining function: $Q$, $Q^3$, and $e^Q-1$ can share one zero-set while differing in algebraic multiplicity and regularity.
+\item For independent tensor-product systems, additive translation generators follow from the ordinary diagonal action; abelianity alone does not force this multiparticle law.
+\item Under the standard Poincare semidirect product, translation generators carry the Lorentz dual representation; this is representation theory once the group action is fixed.
+\item Translation invariance yields conserved total momentum only on-shell and with the appropriate boundary conditions.
+\item Homogeneity, isotropy, relativity, and $\kappa>0$ do not select Poincare: de Sitter and anti-de Sitter retain the Lorentz sector while their transvections do not commute.
+\item For a general affine connection, local coordinates with $\Gamma=0$ require both $R=0$ and $T=0$; the statement is local and does not determine global topology.
+
+\item The local rest-energy relation does not require global Poincare symmetry: in a single Lorentzian cotangent fiber, a standard future timelike shell plus the local IR mass definition gives $E_0=m_{\rm in}c^2$.
+\item The physically relevant shell in a gauge background is a condition on the kinetic/mechanical momentum; a naked canonical momentum is generally gauge dependent.
+\item de Sitter, anti-de Sitter, and nonstationary FLRW backgrounds show that a standard local mass shell can coexist with noncommuting global transvections or with no globally conserved timelike-Killing energy.
+\item A shell can be defined instantaneously from $g_x$ even when the chosen affine connection has torsion or nonmetricity; metric compatibility/dynamics determines whether the norm is preserved along transport.
+\item More generally, a regular isotropic dispersion fixes $E_0=m_{\rm in}v_2^2$ from its quadratic IR coefficient; the identification $v_2=c$ is the specifically Lorentzian-shell input.
+\item For a massive timelike spinless point particle in the declared first-order, exact-reparametrization, full-fiber-Lorentz, metric-ultralocal class, the free worldline term is $L=C\sqrt{g(\dot x,\dot x)}$; with constant nonzero $C=-\mu c$, the standard timelike shell is the Legendre image rather than a separate shell assumption.
+\item The coefficient $\mu$ is identified with local inertial mass only through the Newtonian/IR kinetic coefficient; the resulting $E_0=m_{\rm in}c^2$ remains a local conditional consequence.
+\item Reparametrization invariance implies degree-one homogeneity and $H_c=0$ before gauge fixing, but neither fact determines the form of the Hamiltonian constraint or implies zero physical energy.
+\item The shell surface and its regular constraint flow are more invariant than a particular defining function: $Q$, regular $h(Q)$, and nonzero multiples $fQ$ can be equivalent, while $Q^3$ is singular on the same zero set.
+\item A nonempty connected embedded boundaryless codimension-one future-timelike hypersurface invariant under the standard linear Lorentz action is a single hyperboloid orbit $q=K$; the theorem fixes shell shape but not existence or $K$.
+\item Any scalar invariant defining function on the future timelike cone factors through $q$, so higher powers of $q$ can encode multiple roots, multiplicity or singular representatives without deforming each connected regular orbit.
+\item If several standard isotropic quadratic sectors use the same physical momentum coordinates and exact standard linear Lorentz boost with parameter $c_*$, tangency forces $c_i=c_*$ for every sector.
+\item The dimensionless ratios $c_i/c_j$ are invariant under a common unit rescaling; equality of such ratios to one is physical content distinct from the numerical SI value of $c$.
+\end{itemize}
+
+\subsection{Non-claims}
+This note does \emph{not} establish that:
+\begin{itemize}
+\item $E=mc^2$ uniquely reconstructs Lorentz kinematics;
+\item an exponent $2$ hides two physically independent entities;
+\item kinematic symmetry determines the numerical value of $c$;
+\item the kinematic invariant speed is light without empirical input or an electromagnetic covariance condition;
+\item $G$ and $M$ are the same physical operator or possess a canonical physical intertwiner;
+\item covariance of the scalar wave operator proves full Maxwell covariance including field transformations and sources;
+\item the product-to-speed mechanism is specific to electromagnetism or implies a fundamental limiting speed;
+\item the RPA alone produces new experimental information;
+\item the initial reciprocal boost family has been proved to be the unique consequence of an unspecified general ``symmetry'' principle.
+\item $E_0=m c^2$ by itself proves the complete relativistic dispersion or global Lorentz invariance;
+\item the abstract Lorentz group alone forces a quadratic shell in arbitrary nonlinear momentum coordinates;
+\item a connected invariant set is automatically a single elementary mass shell.
+\item the abelianity of translations by itself forces additive composite momentum;
+\item a nonlinear momentum-composition formula by itself proves a fundamentally deformed coproduct;
+\item homogeneity, isotropy, relativity, and $\kappa>0$ uniquely imply $ISO^+(1,3)$;
+\item $R=0$ alone gives affine coordinates with $\Gamma=0$ for a general affine connection;
+\item local affine flatness fixes the global spacetime topology;
+\item the kinematic commutator $[P_\mu,P_\nu]$ is generally identical to the covariant-derivative commutator $[\nabla_\mu,\nabla_\nu]$.
+
+\item global Poincare symmetry or commuting global translations are necessary for a local rest-energy relation;
+\item a curved spacetime necessarily modifies the minimally coupled point-particle mass shell;
+\item the canonical momentum of a charged particle necessarily satisfies the gauge-invariant standard shell without the kinetic shift;
+\item a shell defined at one point is automatically preserved along a worldline in the presence of nonmetricity;
+\item the infrared identity $E_0=m_{\rm in}c^2$ by itself implies the complete Lorentzian dispersion at higher momentum.
+\item reparametrization invariance alone selects the metric square-root action or a quadratic shell;
+\item general covariance alone selects minimal metric coupling;
+\item the mere existence of a Hamiltonian constraint makes its representative quadratic or unique;
+\item the restricted worldline theorem explains why nature must be pointlike, spinless, first-order, full-Lorentz, and metric-ultralocal;
+\item ``unique within the selected theory class'' means ``unique possible dynamics in nature.''
+\item Lorentz symmetry alone selects the invariant mass level $K$ or the spectrum of species masses;
+\item Lorentz-invariance of a possibly disconnected zero set forces a single shell;
+\item the abstract Lorentz group forces a quadratic shell when the physical momentum action is nonlinear or momentum space is curved;
+\item interactions alone force distinct sector limiting speeds to become equal;
+\item the common-$c$ consistency theorem explains why nature supplies one common Lorentz cone/metric;
+\item the dimensionful decimal value of $c$ is fixed by symmetry independently of unit conventions.
+\end{itemize}
+
+
+
+\section{Shared Lorentz covariance and the principal-symbol bridge}
+\label{sec:principal-symbol}
+
+\subsection{Status and prior-art boundary}
+The v0.10.0 promotion follows a baseline-aware external audit with separate gates for mathematical correctness and historical priority. The mathematical verdict is \texttt{PASS\_WITH\_CORRECTIONS}; the prior-art gate is \texttt{PASS}; and the central statement is classified \texttt{KNOWN\_RESULT\_REDERIVED}. The invariant-theory ingredient is a standard one-vector specialization of the first fundamental theorem for orthogonal groups, while principal symbols, characteristic varieties and conal causal structure are standard PDE tools~\cite{weyl1939,hormander1963,geroch1996,khavkine2012,dull2016}. The RPIA contribution claimed here is therefore only a checked cross-spin application and a typed combination with the earlier orbit/worldline routes.
+
+\subsection{Physical principal symbol and gauge gate}
+For a finite-order local linearized field system, freeze coefficients at $x$ and denote the principal symbol by $\sigma_x(E,k)$. The object controlling propagation is the physical rank-loss/characteristic variety after legitimate constraint and gauge treatment. A raw determinant can be meaningless: for Maxwell potentials the ungauge-fixed symbol has a gauge vector in its kernel for every $k$, hence its determinant vanishes identically. In an admissible Lorenz/Feynman gauge the symbol is proportional to $q(k)I$, while the physical quotient retains the same reduced null cone. Similarly, for Dirac fields $\det(\gamma\cdot k)=q(k)^2$ in four dimensions, so the determinant has multiplicity even though the punctured reduced cone is smooth. Regularity must therefore be assigned to the reduced variety and physical rank structure, not to $d(\det P)\neq0$.
+
+\subsection{Known principal-symbol corollary}
+Let $G=SO^+(1,3)$ act in the standard covector representation on $T_x^*M$, and suppose that after valid physical reduction there exists a real nonzero scalar characteristic polynomial $\chi_x(k)$ satisfying
+\begin{equation}
+\chi_x(\Lambda k)=\chi_x(k),\qquad \chi_x(\lambda k)=\lambda^d\chi_x(k),\quad d>0,
+\end{equation}
+with no preferred frozen tensor coefficients that reduce the effective symmetry. For one covector the invariant ring is generated by
+\begin{equation}
+q_x(k)=g_x^{\mu\nu}k_\mu k_\nu.
+\end{equation}
+Therefore $\chi_x=f_x(q_x)$. Homogeneity permits only one monomial,
+\begin{equation}
+\boxed{\chi_x(k)=C(x)[q_x(k)]^N},\qquad C(x)\neq0,
+\end{equation}
+so that
+\begin{equation}
+\boxed{\operatorname{Char}^{\rm red}_x=\{k\neq0:q_x(k)=0\}}.
+\end{equation}
+The result extends the earlier elementary ``same standard boost $\Rightarrow$ same $c$'' consistency check to finite-order local field equations of different spin/representation, provided the physical characteristic scalar exists and the same exact Lorentz covariance is already assumed. It does not explain the origin of that shared covariance.
+
+\subsection{Negative controls and conformal ambiguity}
+Lower-order interactions do not modify the principal symbol, and derivative mixing can instead produce quartic or multiple characteristic branches. Hyperbolicity and a common time direction do not force one cone; internal gauge invariance and diffeomorphism covariance also allow sector-dependent effective metrics. These are known controls in Lorentz-violating EFT and modified-gravity literature~\cite{coleman1999,reall2014,reall2021}. Conversely, vanishing birefringence can select a metric light cone inside suitable local-linear premetric electrodynamics, but this is an intra-sector photon statement rather than proof of inter-sector universality~\cite{lammerzahl2004}. A null cone fixes only the conformal class $[g]$: $g$ and $\Omega^2g$ have the same characteristic cone.
+
+\subsection{Epistemic ledger}
+The result is classified as follows:
+\begin{itemize}
+\item one-covector invariant ring: \texttt{KNOWN\_RESULT};
+\item $\chi=Cq^N$ from invariance plus homogeneity: \texttt{KNOWN\_RESULT\_REDERIVED};
+\item cross-spin/multifield use inside RPIA: \texttt{KNOWN\_RESULT\_NEW\_APPLICATION};
+\item integrated Route O/W/principal-symbol/RG genealogy: \texttt{KNOWN\_RESULT\_NEW\_COMBINATION};
+\item origin of universal shared Lorentz symmetry: \texttt{NOVELTY\_NOT\_ESTABLISHED} and physically unresolved.
+\end{itemize}
+This separation is now mandatory under the project-wide prior-art gate: correct does not mean new, and independently rederived does not mean independently discovered.
+
+
+
+\section{RG Phase 1--2 closure: attraction is not yet an origin mechanism}
+\label{sec:rg-phase12}
+The RG branch was audited in two fail-closed phases after the v0.10.0 consolidation.  The purpose was not to rediscover emergent Lorentz invariance, which has substantial prior art, but to test whether representative flows are sufficiently rapid, universal and technically natural to explain the observed smallness of inter-sector Lorentz violation.
+
+\subsection{Exact Yukawa replication and the rate gate}
+For the one-loop scalar--fermion Yukawa model of Anber--Donoghue, the replicated beta functions are
+\begin{align}
+\beta(c_b)&=\frac{g^2(c_b^2-c_f^2)}{8\pi^2c_bc_f^3},\\
+\beta(c_f)&=\frac{g^2(c_f-c_b)}{6\pi^2c_b(c_f+c_b)^2}.
+\end{align}
+Writing $a=c_b/c_f=1+\eta$ and linearizing around $c_b=c_f=c$ gives
+\begin{equation}
+\mu\frac{d\eta}{d\mu}=\frac{7g^2}{24\pi^2c^3}\eta+O(\eta^2),
+\end{equation}
+while on the common-speed line
+\begin{equation}
+\beta(g)=\frac{5g^3}{16\pi^2c^3}.
+\end{equation}
+Consequently
+\begin{equation}
+\boxed{\frac{d\ln|\eta|}{d\ln g^2}=\frac{7}{15}},
+\qquad
+\boxed{\frac{\eta(\mu)}{\eta_*}=\left[\frac{g^2(\mu)}{g_*^2}\right]^{7/15}},
+\end{equation}
+and, with $L=\ln(\mu_*/\mu)$,
+\begin{equation}
+\frac{\eta(\mu)}{\eta_*}=\left(1+\frac{5g_*^2}{8\pi^2c^3}L\right)^{-7/15}.
+\end{equation}
+Thus the Lorentz-symmetric speed line is genuinely IR-attractive in this model, but the approach is only a power of a logarithm. The audited classification is therefore \texttt{ATTRACTIVE\_BUT\_TOO\_SLOW}, not a failure of attraction itself.
+
+\subsection{Many-field acceleration and model cost}
+Published many-field constructions can accelerate the running.  In the constant-multiplicity gauge/fermion control the exact linearized exponent is
+\begin{equation}
+1+\frac{2N_g}{N_f},
+\end{equation}
+where the commonly displayed $2N_g/N_f$ is the declared $N_g\gg N_f$ approximation.  The benchmark $N_f=120$, $N_g=900$ produces very strong suppression, but the audit classifies the cost as high and the ultraviolet equality assumptions as substantial.  Faster alignment is therefore an existence result inside selected high-multiplicity constructions, not a generic low-cost mechanism.
+
+\subsection{Full-operator and experimental matching gates}
+The general Lorentz-violating QED EFT contains many coupled coefficient directions whose one-loop running is known to mix nontrivially~\cite{klp2002}.  Equality of two isotropic limiting-speed coefficients therefore probes only a small subspace.  The full audit finds no theorem that the physically relevant Lorentz-violating coefficient vector flows universally to zero.
+
+The experimental Phase 2 audit also makes the comparison relative and operator-specific.  In a dimension-four QED convention the linearized gauge--fermion mismatch can be written
+\begin{equation}
+\eta_{\gamma/f}=\frac{4}{3}\mathring c_f-\widetilde\kappa_{\rm tr}+O(\mathrm{LV}^2),
+\end{equation}
+whereas the literal Yukawa model is scalar--fermion and has no unique identification with the photon sector.  Charged-lepton analyses already constrain the relevant isotropic SME directions very strongly~\cite{cks2022}, but those data cannot be credited to a model without a valid species/operator embedding.
+
+Even under a favorable linearized stress test, the simple Yukawa running requires an astronomically large RG hierarchy to reach the selected electron--photon target from a generic ultraviolet mismatch. Over a realistic Planck-to-electroweak hierarchy, the ultraviolet mismatch must already be of essentially the observed tiny order.  The audited naturalness verdict is therefore negative for the simple mechanism.  High-multiplicity constructions can hit selected bounds after further increasing model cost, but neither full-operator coverage nor weak-sector universality follows.
+
+\subsection{Fail-closed stop of the RG branch}
+The frozen RG gate table is
+\begin{center}
+\begin{tabular}{lll}
+\toprule
+Gate & Question & Verdict\\
+\midrule
+RG-1 & selected common speed IR-attractive? & \texttt{PASS}\\
+RG-2 & naturally fast enough? & \texttt{FAIL}\\
+RG-3 & fast without high model cost? & \texttt{FAIL}\\
+RG-4 & full Lorentz-violating EFT vector attracted? & \texttt{NOT\_ESTABLISHED}\\
+RG-5 & weak sectors universally aligned? & \texttt{MODEL\_DEPENDENT}\\
+RG-6 & experimental viability of the simple route? & \texttt{FAIL / NOT\_ESTABLISHED}\\
+\bottomrule
+\end{tabular}
+\end{center}
+The branch therefore stops rather than being extended by parameter forcing.  The strongest supported statement is that selected limiting-speed differences can be IR-attractive in specific models; a full, rapid, universal and natural dynamical origin of Lorentz invariance is not established.
+
+
+\section{Spin-2 branch closure: exact emergence is not established}
+\label{sec:spin2-closure}
+The spin-2 branch was audited in an initial replication phase and a dedicated gap-resolution phase. The central algebraic chain of Hertzberg--Sandora is reproducible, but the exact promotion
+\begin{equation}
+\text{locality + long-range massless spin 2}
+\Longrightarrow
+E_i^2=c_g^2p_i^2+m_i^2c_g^4
+\end{equation}
+does not follow from the minimal audited premises.
+
+\subsection{Two missing closures}
+The first gap is conservation-law completeness. The soft constraint requires more than conservation of total energy, momentum and declared ordinary charges: it requires those quantities to exhaust all additive collision invariants in the connected scattering sector. Classical and generalized kinetic theory contains genuine completeness theorems~\cite{arkeryd1990,spohn2006,ern1998}, but only after imposing full-collision support, regularity, nondegeneracy and charge-space assumptions. Those assumptions are not consequences of the HS S-matrix setup. In particular, the arbitrary-dispersion result inspected in the gap audit assumes Hessian nondegeneracy, while an exactly linear massless dispersion $E=c|\mathbf p|$ has singular Hessian everywhere.
+
+The second gap is hard-graviton closure. Infrared-finite perturbative gravitational scattering can be formulated using dressed asymptotic states rather than ordinary bare Fock states~\cite{ware2013,choi2017}. This makes hard-graviton amplitudes meaningful in the perturbative asymptotically flat regime, but does not prove that the soft graviton used in the bootstrap belongs to one exact, stable all-momentum branch governed by the same integrated relation. EFT higher-derivative terms, thresholds, extra branches and strong-gravity regimes remain outside that inference~\cite{giddings2009,donoghue1994}.
+
+\subsection{Strongest surviving low-energy statement}
+With the additional hypotheses made explicit -- a nondegenerate full-collision class with complete additive invariants, a connected process graph, a local two-helicity spin-2 EFT at leading derivative order, and suitably dressed perturbative asymptotic states -- the audited literature supports only
+\begin{equation}
+\boxed{
+E_i(\mathbf p)^2
+=
+m_i^2c_g^4+c_g^2|\mathbf p|^2
++O(|\mathbf p|^4/\Lambda^2)
+}
+\end{equation}
+through the participating connected component. This is classified as a restricted low-energy result / known-result combination. It does not establish an exact all-momentum shell, disconnected-sector universality, or an assumption-free origin of Lorentz boosts.
+
+The frozen spin-2 verdicts are therefore:
+\begin{center}
+\begin{tabular}{ll}
+\toprule
+Gate & Verdict\\
+\midrule
+collision-invariant completeness in restricted classes & \texttt{PASS\_WITH\_CORRECTIONS}\\
+transfer to HS without extra structure & \texttt{NOT\_ESTABLISHED}\\
+process-graph propagation & \texttt{PASS\_WITH\_CORRECTIONS}\\
+dressed hard-graviton scattering state & \texttt{PASS\_WITH\_CORRECTIONS}\\
+exact hard-graviton branch closure & \texttt{NOT\_ESTABLISHED}\\
+low-energy common dispersion & \texttt{PASS\_WITH\_CORRECTIONS}\\
+exact common dispersion & \texttt{NOT\_ESTABLISHED}\\
+\bottomrule
+\end{tabular}
+\end{center}
+No Spin-2 Phase 2 is opened.
+
+\section{Conformal-normalization closure: no dimensionful setting target}
+\label{sec:conformal-closure}
+The conformal/metrological branch has now been audited source-first and fail-closed. Its result is a \emph{null closure with a relational residue}. Causal order and light propagation recover, under explicit causality hypotheses, the Lorentzian conformal class $[g]$ and associated time orientation, not a distinguished representative $g$ or an absolute proper-time scale~\cite{hkm1976,malament1977}. The counterexample is immediate: for any smooth positive $\Omega(x)$,
+\begin{equation}
+ g'_{\mu\nu}=\Omega(x)^2g_{\mu\nu}
+\end{equation}
+has the same null directions, while proper time rescales locally as $d\tau'=\Omega(x)d\tau$.
+
+The Ehlers--Pirani--Schild reconstruction adds unparameterized free fall to light propagation. Conformal and projective compatibility yields a Weyl structure, not a fully normalized pseudo-Riemannian metric~\cite{eps1972,eps2012}. Integrability/no-second-clock input and appropriate global conditions are additional; even after pseudo-Riemannian reduction, an overall positive scale must be fixed by an operational matter/clock/ruler standard.
+
+\subsection{The SI decimal is metrological, not a dynamical target}
+In the present SI the second is fixed by the caesium-133 hyperfine transition and the metre is defined by fixing
+\begin{equation}
+ c=299\,792\,458\ \mathrm{m\,s^{-1}}
+\end{equation}
+exactly~\cite{bipm_metre,bipm_constants}. Under a change of length and time units $u'_L=\lambda u_L$ and $u'_T=\mu u_T$, the numerical value transforms as
+\begin{equation}
+ c'=\frac{\mu}{\lambda}c,
+\end{equation}
+and finite choices can set the numerical value to unity. Therefore the proposition that the bare dimensionful decimal is an independent unit-invariant physical datum fails.
+
+The surviving content is not null. A finite universal Lorentzian cone cannot be turned into the Galilean $c=\infty$ limit by a finite unit change. Ratios such as
+\begin{equation}
+ \beta=\frac vc,\qquad \frac{c_i}{c_j},\qquad \frac{\tau_1}{\tau_2}
+\end{equation}
+remain relational observables. Equality or inequality of sector cones is physical. This distinction is consistent with the longstanding disagreement over the status and counting of dimensionful fundamental constants~\cite{duff2002,matsas2007,matsas2023}: the audit does not adopt one philosophical convention as a theorem, but it does establish that the SI decimal itself is not an invariant target.
+
+\subsection{Provenance of the explicit \texorpdfstring{$c^2$}{c squared} in rest energy}
+The structural relation remains
+\begin{equation}
+ E^2=c^2|\mathbf p|^2+m^2c^4,
+\end{equation}
+with rest limit $E_0=mc^2$. In units $c=1$, the same shell reads $E^2=|\mathbf p|^2+m^2$ and $E_0=m$. Thus the displayed $c^2$ in SI restores the conversion between the chosen mass and energy units, while the nontrivial physical content lies in the Lorentzian mass shell and dimensionless statements such as
+\begin{equation}
+ \frac{E_0}{mc^2}=1.
+\end{equation}
+The branch verdicts are
+\begin{center}
+\begin{tabular}{ll}
+\toprule
+Gate & Verdict\\
+\midrule
+causal structure $\to[g]$ & \texttt{PASS\_WITH\_CORRECTIONS}\\
+$[g]\to$ absolute metric normalization & \texttt{FAIL}\\
+EPS compatibility & \texttt{PASS\_WITH\_CORRECTIONS}\\
+SI numerical-$c$ audit & \texttt{PASS}\\
+dimensionful-$c$ invariant datum & \texttt{FAIL}\\
+dimensionless/relational residue & \texttt{PASS\_WITH\_CORRECTIONS}\\
+setting-mechanism readiness & \texttt{NO}\\
+\bottomrule
+\end{tabular}
+\end{center}
+No dimensionful-setting phase is opened.
+
+\section{Photon-operational closure: relational observables without a new target}
+\label{sec:photon-op}
+The photon-operational branch has now been audited against the v1.9B propagation-history testbed and standard prior art in geometrical optics, cosmology, lensing and conformal null propagation.  Its strongest defensible classification is
+\begin{equation}
+\boxed{\texttt{DISCIPLINED\_OPERATIONAL\_DECOMPOSITION\_OF\_KNOWN\_RELATIONAL\_OBSERVABLES}}.
+\end{equation}
+After unit, conformal, affine, observer, source/detector, band and protocol freedoms are separated, useful relational quantities remain, but no new unit-independent physical target is isolated.  In particular,
+\begin{center}
+\begin{tabular}{ll}
+\toprule
+Gate & Verdict\\
+\midrule
+unparameterized null-path/conformal behavior & \texttt{PASS\_WITH\_CORRECTIONS}\\
+affine parameter as photon clock & \texttt{FAIL}\\
+$T_{\rm geo}/c$ provenance & \texttt{SI\_UNIT\_CONVERSION}\\
+observer frequency/redshift residue & \texttt{PASS\_WITH\_CORRECTIONS}\\
+phase/cycle relational residue & \texttt{PASS\_WITH\_CORRECTIONS}\\
+polarization/transport residue & \texttt{PASS\_WITH\_CORRECTIONS}\\
+new unit-independent target found? & \texttt{NO}\\
+cycles-mechanism readiness & \texttt{NO}\\
+\bottomrule
+\end{tabular}
+\end{center}
+The audit sharpens two technical distinctions.  First, a generic affine tangent $\ell^a=dx^a/d\lambda$ rescales under $\lambda\mapsto a\lambda+b$ and therefore carries no physical photon-clock normalization.  A physical wave covector must instead be tied to the eikonal/source/observer normalization, for example $k_a=\nabla_aS$.  Under a conformal rescaling $\widetilde g_{ab}=\Omega^2g_{ab}$, the same unparameterized null curve is preserved but an affine parameter changes according to
+\begin{equation}
+ d\widetilde\lambda=\Omega^2\,d\lambda
+\end{equation}
+up to a new constant affine rescaling and shift.  Second, at leading vacuum geometrical-optics order $k^ak_a=0$, so along its own null generator
+\begin{equation}
+ \frac{dS}{d\lambda}=k^a\nabla_aS=k^ak_a=0.
+\end{equation}
+Interferometric phase is therefore an endpoint/path/protocol comparison and must not be represented as a scalar phase simply accumulating along the same null generator.
+
+The operational residues remain standard relational observables.  A normalized observer measures $\omega=-k_au^a$; redshift is a ratio of such endpoint measurements; cycle counts and interferometric phase differences are meaningful only after the corresponding source/detector/protocol convention is declared; polarization components depend on screen/tetrad choice even when the physical polarization class is well defined.  Likewise, in a flat FRW convention $\chi/c=\int dz/H(z)$ is a conformal-time-type path label and is generically distinct from lookback time $\int dz/[(1+z)H(z)]$, while a lensing delay contains distance/clock normalization and a dimensionless Fermat-potential difference rather than following from the bare pointwise cone alone.
+
+The branch therefore does not reopen the dimensionful-$c$ question and does not authorize a cycles/oscillations setting mechanism.  Its value is methodological: it supplies a concrete transformation ledger that separates null structure, affine gauge, chronometric normalization and observer/protocol data without assigning the photon an internal time.
+
+\section{Terminal genealogy closure: common empirical residue within the audited route set}
+\label{sec:terminal-genealogy}
+The terminal dependency audit has now been completed fail-closed. It does not produce another mechanism. Instead, after removing definitions, unit conventions, coordinate choices, representation conventions and previously established theorems, the operational identity
+\begin{equation}
+E_0=m_{\rm in}c^2
+\end{equation}
+has a five-element empirical residue common to the three audited genealogies:
+\begin{enumerate}
+\item \textbf{finite Lorentzian branch}: nature realizes the hyperbolic finite-cone branch $\kappa>0$ rather than the Galilean $\kappa=0$ branch or the algebraically allowed elliptic branch;
+\item \textbf{shared cone}: the matter, clock and null sectors used by the operational protocol share one cone and normalization to the declared precision;
+\item \textbf{linear physical momentum}: measured physical momentum realizes the standard linear local Lorentz covector representation in the regime of interest, with kinetic rather than naked canonical momentum in gauge backgrounds;
+\item \textbf{stable massive sector}: a sufficiently sharp future-timelike massive branch with a rest point exists;
+\item \textbf{operational mass identification/calibration}: the infrared coefficient $m_{\rm in}$ is defined by the low-momentum expansion; the empirical content is that the reported mass used in the claim is identified or calibrated to that coefficient in the declared regime.
+\end{enumerate}
+\paragraph{Scope clarification for v1.0.1.}
+The list above is the \emph{common empirical residue of the audited route set}.  The machine-checked intersection proves commonality across those routes, not exhaustiveness over every logically possible future genealogy.  A later route may contain additional route-specific empirical assumptions without changing the five-element intersection.  Accordingly, the internal status label \texttt{IRREDUCIBLE\_EMPIRICAL\_RESIDUE\_IDENTIFIED} is retained as a project-state identifier but is interpreted here as irreducibility \emph{within the audited quotient and route set}, not as a universal no-go theorem.
+
+The mass node is also explicitly typed in two layers.  Defining $m_{\rm in}$ through the coefficient in
+\begin{equation}
+E=E_0+\frac{|\mathbf p|^2}{2m_{\rm in}}+O(|\mathbf p|^4)
+\end{equation}
+is a definition/operational convention; the empirical input is the identification or calibration of the reported mass to that coefficient.  This clarification does not create a sixth empirical residue.
+
+Finally, global translation invariance and Noether conservation are \emph{not} added as a sixth common input.  They occur in the global-Poincare route, but the fiberwise/local-shell route explicitly removes global translations and global conserved energy while retaining the local shell theorem.
+
+The terminal status is therefore
+\begin{equation}
+\boxed{\texttt{IRREDUCIBLE\_EMPIRICAL\_RESIDUE\_IDENTIFIED}},
+\end{equation}
+with
+\begin{equation}
+\boxed{\texttt{READY\_FOR\_NEW\_MECHANISM\_BRANCH=NO}}.
+\end{equation}
+
+Given those inputs and the regularity assumptions already audited, the remaining mathematical chain is standard. Lorentz-orbit classification fixes the admitted massive component to
+\begin{equation}
+E^2-c^2|\mathbf p|^2=E_0^2,
+\end{equation}
+and the positive branch has the infrared expansion
+\begin{equation}
+E=E_0+\frac{c^2|\mathbf p|^2}{2E_0}+O(|\mathbf p|^4).
+\end{equation}
+The operational inertial-mass definition,
+\begin{equation}
+E=E_0+\frac{|\mathbf p|^2}{2m_{\rm in}}+O(|\mathbf p|^4),
+\end{equation}
+then yields
+\begin{equation}
+\boxed{E_0=m_{\rm in}c^2}.
+\end{equation}
+Thus the equation is a theorem \emph{inside the declared operational regime}; it does not generate the five physical premises on which that regime rests.
+
+The conclusion is stable under three typed genealogies. A global Poincare route contains more spacetime structure than necessary. A fiberwise/local-shell route removes global translations and global energy conservation. The minimal empirical route removes the frozen RG, exact spin-2, dimensionful-setting and photon-cycle mechanism branches entirely. The machine-checked set intersection of empirical nodes across these audited routes is the five-element residue listed above. This intersection is a statement of commonality, not a discriminating proof that the routes are empirically independent or that a future route cannot contain additional route-specific inputs.
+
+This terminal classification also fixes several negative boundaries. Homogeneity, isotropy and a relativity principle do not by themselves select $\kappa>0$. Shared Lorentz covariance can force equal cone coefficients conditionally, but does not explain why sectors share that covariance. Orbit classification fixes the \emph{shape} of an admitted shell, not its existence, stability, species assignment or invariant level. Canonical and kinetic momenta need not coincide in gauge backgrounds. Pole, running, bare, gravitational, composite, resonance and infrared inertial masses are not identified without additional theory and calibration. Finally, the SI decimal assigned to $c$ remains a metrological convention rather than a new dynamical target.
+
+No novelty is claimed for the orbit/mass-shell theorem or for the empirical facts themselves. The contribution of the present audit is the typed fail-closed compression of the genealogy and the explicit identification of the point at which the programme reaches empirical input rather than another derivable layer.  This public v1.0.1 release preserves the conditional theorem while tightening the publication-level scope of the terminal residue claim.
+
+\section{Methodological conclusion and revised research boundary}
+The project began by opening the explicit square in $E_0=mc^2$ and asking what invariant structure stabilizes it.  Successive audits have separated algebraic repetition, invariant geometry, representation choice, local shell structure, worldline dynamics and global spacetime symmetry.  The exponent itself never supplied hidden physical multiplicity; the useful product is a typed genealogy that states exactly which assumptions make a repeated factor unavoidable.
+
+The v0.8.0 worldline theorem remains a valid constructive route: inside the massive timelike, spinless, first-order, exact-reparametrization, full-Lorentz, metric-ultralocal point-particle class, the square-root action is selected and its Legendre image is the standard timelike shell.  The v0.9.x orbit route gives a distinct and more minimal statement about shell geometry, but the prior-art gate now classifies its core as standard Wigner/Poincare representation theory rather than a novel theorem of this project.  Once a connected embedded future-timelike dispersion hypersurface is admitted in a standard linear Lorentz momentum fiber, orbit structure forces that component to be $q=K$.  This does not derive the shell's existence or invariant value; its role in RPIA is an independently checked, explicitly scoped link in the genealogy.
+
+The two routes therefore remain complementary:
+\begin{equation}
+\boxed{\text{Route O: shell existence + standard linear Lorentz}\Rightarrow q=K}
+\end{equation}
+for minimal orbit geometry, and
+\begin{equation}
+\boxed{\text{Route W: selected worldline theory class}\Rightarrow L\propto\sqrt q\Rightarrow q=\mu^2c^2}
+\end{equation}
+for a richer conditional dynamical construction.  Both converge, after local observer decomposition and the independent IR definition of inertial mass, on $E_0=m_{\rm in}c^2$.
+
+The multi-sector audit adds a conditional consistency result.  If every sector uses the same physical momentum normalization and the same exact standard linear Lorentz boost, then each standard quadratic shell must carry the same limiting coefficient $c_i=c_*$.  No novelty is claimed for this elementary consistency calculation pending a dedicated prior-art search.  More importantly, historical RG work already shows that interactions can drive Lorentz-violating velocities toward common infrared values in specific models~\cite{nielsen1978,chadha1983,anber2011}.  The relevant open problem is therefore the rate, universality and naturalness of such alignment, not the already-known possibility itself.
+
+The terminal audit shows that the stopping point is not another derived mechanism but a five-element empirical residue common to the audited genealogies: finite Lorentzian branch selection, shared cone, linear physical momentum realization, existence of a stable massive sector, and operational mass identification/calibration. These are the inputs left after the audited mathematical and metrological quotients \emph{within the declared route set}; the result is not a universal proof that no future genealogy can add route-specific empirical premises. The principal-symbol, RG, exact spin-2, dimensionful-setting and photon-operational mechanism routes are closed at their audited boundaries. Section~\ref{sec:terminal-genealogy} therefore closes the present programme at this question. No new mechanism branch is authorized by this result. The remaining unexplained statements are explicitly empirical rather than hidden consequences of the algebra, and candidate cycles/phase/oscillation mechanisms remain blocked. Any future project must begin from a genuinely new, independently motivated physical question.
+
+\begin{thebibliography}{99}
+\bibitem{einstein1905sr}
+A. Einstein, ``Zur Elektrodynamik bewegter K\"orper,'' \emph{Annalen der Physik} \textbf{322} (1905), 891--921. DOI: \href{https://doi.org/10.1002/andp.19053221004}{10.1002/andp.19053221004}.
+
+\bibitem{einstein1905mass}
+A. Einstein, ``Ist die Tr\"agheit eines K\"orpers von seinem Energieinhalt abh\"angig?,'' \emph{Annalen der Physik} \textbf{323} (1905), 639--641. DOI: \href{https://doi.org/10.1002/andp.19053231314}{10.1002/andp.19053231314}.
+
+\bibitem{pelissetto2015}
+A. Pelissetto and M. Testa, ``Getting the Lorentz transformations without requiring an invariant speed,'' \emph{American Journal of Physics} \textbf{83} (2015), 338--340. DOI: \href{https://doi.org/10.1119/1.4901453}{10.1119/1.4901453}; arXiv:1504.02423.
+
+\bibitem{certik2007}
+O. \v{C}ert\'ik, ``Simple derivation of the special theory of relativity without the speed of light axiom,'' arXiv:0710.3398 [physics.class-ph] (2007).
+
+\bibitem{dey2017}
+S. Dey, ``Time Isotropy, Lorentz Transformation and Inertial Frames,'' arXiv:1704.08840 [physics.class-ph] (2017).
+
+\bibitem{tan2026}
+N. Tan, ``A Symmetry-First Elementary Derivation of the Lorentz Transformation,'' arXiv:2605.25159v3 [physics.class-ph] (2026).
+
+\bibitem{pal2003}
+P. B. Pal, ``Nothing but Relativity,'' arXiv:physics/0302045 [physics.class-ph] (2003).
+
+\bibitem{drory2014}
+A. Drory, ``The Necessity of the Second Postulate in Special Relativity,'' arXiv:1412.4018 [physics.gen-ph] (2014).
+
+\bibitem{gibbons2007finsler}
+G. W. Gibbons, J. Gomis and C. N. Pope, ``General Very Special Relativity is Finsler Geometry,'' \emph{Phys. Rev. D} \textbf{76} (2007), 081701; \href{https://doi.org/10.1103/PhysRevD.76.081701}{DOI}; arXiv:0707.2174.
+
+\bibitem{deriglazov2013rigid}
+A. Deriglazov and A. Nersessian, ``Rigid particle revisited: extrinsic curvature yields the Dirac equation,'' \emph{Phys. Lett. A} \textbf{378} (2014), 1224--1227. DOI: \href{https://doi.org/10.1016/j.physleta.2014.02.034}{10.1016/j.physleta.2014.02.034}; arXiv:1303.0483.
+
+
+\bibitem{wigner1939}
+E. P. Wigner, ``On Unitary Representations of the Inhomogeneous Lorentz Group,'' \emph{Annals of Mathematics} \textbf{40} (1939), 149--204. DOI: \href{https://doi.org/10.2307/1968551}{10.2307/1968551}.
+
+\bibitem{weinberg1995}
+S. Weinberg, \emph{The Quantum Theory of Fields, Vol. I: Foundations}, Cambridge University Press (1995), Chap.~2, especially the one-particle-state and little-group construction. Chapter DOI: \href{https://doi.org/10.1017/CBO9781139644167.004}{10.1017/CBO9781139644167.004}.
+
+\bibitem{nielsen1978}
+H. B. Nielsen and M. Ninomiya, ``$\beta$-Function in a non-covariant Yang--Mills theory,'' \emph{Nuclear Physics B} \textbf{141} (1978), 153--177. DOI: \href{https://doi.org/10.1016/0550-3213(78)90341-3}{10.1016/0550-3213(78)90341-3}.
+
+\bibitem{chadha1983}
+S. Chadha and H. B. Nielsen, ``Lorentz invariance as a low energy phenomenon,'' \emph{Nuclear Physics B} \textbf{217} (1983), 125--144. DOI: \href{https://doi.org/10.1016/0550-3213(83)90081-0}{10.1016/0550-3213(83)90081-0}.
+
+\bibitem{anber2011}
+M. M. Anber and J. F. Donoghue, ``The emergence of a universal limiting speed,'' \emph{Physical Review D} \textbf{83} (2011), 105027. DOI: \href{https://doi.org/10.1103/PhysRevD.83.105027}{10.1103/PhysRevD.83.105027}; arXiv:1102.0789.
+
+\bibitem{anber2011running}
+M. M. Anber and J. F. Donoghue, ``Limiting velocities as running parameters and superluminal neutrinos,'' arXiv:1110.0132 [hep-ph] (2011).
+
+\bibitem{collins2004}
+J. Collins, A. Perez, D. Sudarsky, L. Urrutia and H. Vucetich, ``Lorentz Invariance and Quantum Gravity: An Additional Fine-Tuning Problem?,'' \emph{Physical Review Letters} \textbf{93} (2004), 191301. DOI: \href{https://doi.org/10.1103/PhysRevLett.93.191301}{10.1103/PhysRevLett.93.191301}; arXiv:gr-qc/0403053.
+
+\bibitem{hermele2007}
+M. Hermele, ``SU(2) gauge theory of the Hubbard model and application to the honeycomb lattice,'' \emph{Physical Review B} \textbf{76} (2007), 035125. DOI: \href{https://doi.org/10.1103/PhysRevB.76.035125}{10.1103/PhysRevB.76.035125}; arXiv:cond-mat/0701134.
+
+\bibitem{duff2002}
+M. J. Duff, L. B. Okun and G. Veneziano, ``Trialogue on the number of fundamental constants,'' \emph{Journal of High Energy Physics} \textbf{03} (2002), 023. DOI: \href{https://doi.org/10.1088/1126-6708/2002/03/023}{10.1088/1126-6708/2002/03/023}; arXiv:physics/0110060.
+
+\bibitem{matsas2007}
+G. E. A. Matsas, V. Pleitez, A. Saa and D. A. T. Vanzella, ``The number of dimensional fundamental constants,'' arXiv:0711.4276 [physics.class-ph] (2007).
+
+\bibitem{matsas2023}
+G. E. A. Matsas, V. Pleitez, A. Saa and D. A. T. Vanzella, ``The number of fundamental constants from a spacetime-based perspective,'' arXiv:2311.09249 [physics.class-ph] (2023).
+
+
+
+\bibitem{weyl1939}
+H. Weyl, \emph{The Classical Groups: Their Invariants and Representations}, Princeton University Press (1939; later editions).
+
+\bibitem{hormander1963}
+L. H\"{o}rmander, \emph{Linear Partial Differential Operators}, Springer (1963).
+
+\bibitem{geroch1996}
+R. Geroch, ``Partial Differential Equations of Physics,'' arXiv:gr-qc/9602055 (1996).
+
+\bibitem{khavkine2012}
+I. Khavkine, ``Characteristics, Conal Geometry and Causality in Locally Covariant Field Theory,'' arXiv:1211.1914 (2012).
+
+\bibitem{dull2016}
+M. D\"{u}ll, F. P. Schuller, N. Stritzelberger and F. Wolz, ``Gravitational closure of matter field equations,'' arXiv:1611.08878 (2016).
+
+\bibitem{coleman1999}
+S. Coleman and S. L. Glashow, ``High-Energy Tests of Lorentz Invariance,'' \emph{Phys. Rev. D} \textbf{59} (1999), 116008; arXiv:hep-ph/9812418.
+
+\bibitem{reall2014}
+H. S. Reall, N. Tanahashi and B. Way, ``Causality and Hyperbolicity of Lovelock Theories,'' \emph{Class. Quantum Grav.} \textbf{31} (2014), 205005; arXiv:1406.3379.
+
+\bibitem{reall2021}
+H. S. Reall, ``Causality in gravitational theories with second order equations of motion,'' arXiv:2101.11623 (2021).
+
+\bibitem{lammerzahl2004}
+C. L\"{a}mmerzahl, A. Macias and H.-J. M\"{u}ller, ``On the structure of the light cone in premetric electrodynamics,'' arXiv:gr-qc/0409072 (2004).
+
+\bibitem{roy2016}
+B. Roy, V. Juri\v{c}i\'c and I. F. Herbut, ``Emergent Lorentz symmetry near fermionic quantum critical points in two and three dimensions,'' arXiv:1510.07650 (2015/2016).
+
+\bibitem{magueijo2002}
+J. Magueijo and L. Smolin, ``Lorentz invariance with an invariant energy scale,'' arXiv:hep-th/0112090 (2001/2002).
+
+\bibitem{relativeLocality2011}
+G. Amelino-Camelia, L. Freidel, J. Kowalski-Glikman and L. Smolin, ``The principle of relative locality,'' arXiv:1101.0931 [hep-th] (2011).
+
+\bibitem{klp2002}
+V. A. Kosteleck\'y, C. D. Lane and A. G. M. Pickering, ``One-Loop Renormalization of Lorentz-Violating Electrodynamics,'' \emph{Phys. Rev. D} \textbf{65} (2002), 056006. DOI: \href{https://doi.org/10.1103/PhysRevD.65.056006}{10.1103/PhysRevD.65.056006}; arXiv:hep-th/0111123.
+
+\bibitem{cks2022}
+A. Crivellin, F. Kirk and M. Schreck, ``Impact of Lorentz violation on anomalous magnetic moments of charged leptons,'' arXiv:2208.11420 [hep-ph] (2022).
+
+\bibitem{weinberg1964soft}
+S. Weinberg, ``Photons and Gravitons in S-Matrix Theory: Derivation of Charge Conservation and Equality of Gravitational and Inertial Mass,'' \emph{Phys. Rev.} \textbf{135} (1964), B1049--B1056. DOI: \href{https://doi.org/10.1103/PhysRev.135.B1049}{10.1103/PhysRev.135.B1049}.
+
+\bibitem{deser1970}
+S. Deser, ``Self-Interaction and Gauge Invariance,'' \emph{Gen. Relativ. Gravit.} \textbf{1} (1970), 9--18. DOI: \href{https://doi.org/10.1007/BF00759198}{10.1007/BF00759198}; arXiv:gr-qc/0411023.
+
+\bibitem{khoury2014}
+J. Khoury, G. E. J. Miller and A. J. Tolley, ``On the Origin of Gravitational Lorentz Covariance,'' \emph{Class. Quantum Grav.} \textbf{31} (2014), 135011. DOI: \href{https://doi.org/10.1088/0264-9381/31/13/135011}{10.1088/0264-9381/31/13/135011}; arXiv:1305.0822.
+
+\bibitem{hertzberg2017soft}
+M. P. Hertzberg and M. Sandora, ``Special Relativity from Soft Gravitons,'' \emph{Phys. Rev. D} \textbf{96} (2017), 084048. DOI: \href{https://doi.org/10.1103/PhysRevD.96.084048}{10.1103/PhysRevD.96.084048}; arXiv:1704.05071.
+
+\bibitem{hertzberg2020boost}
+M. P. Hertzberg, J. A. Litterer and M. Sandora, ``Symmetries from Locality. II. Gravitation and Lorentz Boosts,'' \emph{Phys. Rev. D} \textbf{102} (2020), 025023. DOI: \href{https://doi.org/10.1103/PhysRevD.102.025023}{10.1103/PhysRevD.102.025023}.
+
+\bibitem{hertzberg2020time}
+M. P. Hertzberg and J. A. Litterer, ``Symmetries from Locality. III. Massless Spin-2 Gravitons and Time Translations,'' \emph{Phys. Rev. D} \textbf{102} (2020), 085007. DOI: \href{https://doi.org/10.1103/PhysRevD.102.085007}{10.1103/PhysRevD.102.085007}; arXiv:2008.06510.
+
+
+\bibitem{arkeryd1990}
+L. Arkeryd and C. Cercignani, ``On a functional equation arising in the kinetic theory of gases,'' \emph{Rendiconti Lincei. Matematica e Applicazioni} \textbf{1} (1990), 139--149.
+
+\bibitem{spohn2006}
+H. Spohn, ``Collisional Invariants for the Phonon Boltzmann Equation,'' arXiv:math-ph/0605069 (2006).
+
+\bibitem{ern1998}
+A. Ern and V. Giovangigli, ``The kinetic chemical equilibrium regime,'' kinetic-theory treatment of reactive mixtures (1998).
+
+\bibitem{ware2013}
+J. Ware, R. Saotome and R. Akhoury, ``Construction of an asymptotic S matrix for perturbative quantum gravity,'' arXiv:1308.6285 (2013).
+
+\bibitem{choi2017}
+S. Choi, U. Kol and R. Akhoury, ``Asymptotic Dynamics in Perturbative Quantum Gravity and BMS Supertranslations,'' arXiv:1708.05717 (2017).
+
+\bibitem{giddings2009}
+S. B. Giddings and R. A. Porto, ``The gravitational S-matrix,'' arXiv:0908.0004 (2009).
+
+\bibitem{donoghue1994}
+J. F. Donoghue, ``General relativity as an effective field theory: The leading quantum corrections,'' arXiv:gr-qc/9405057 (1994).
+
+\bibitem{hkm1976}
+S. W. Hawking, A. R. King and P. J. McCarthy, ``A new topology for curved space--time which incorporates the causal, differential, and conformal structures,'' \emph{J. Math. Phys.} \textbf{17} (1976), 174--181. DOI: \href{https://doi.org/10.1063/1.522874}{10.1063/1.522874}.
+
+\bibitem{malament1977}
+D. B. Malament, ``The class of continuous timelike curves determines the topology of spacetime,'' \emph{J. Math. Phys.} \textbf{18} (1977), 1399--1404. DOI: \href{https://doi.org/10.1063/1.523436}{10.1063/1.523436}.
+
+\bibitem{eps1972}
+J. Ehlers, F. A. E. Pirani and A. Schild, ``The geometry of free fall and light propagation,'' in L. O'Raifeartaigh (ed.), \emph{General Relativity: Papers in Honour of J. L. Synge}, Clarendon Press, Oxford (1972), pp.~63--84.
+
+\bibitem{eps2012}
+J. Ehlers, F. A. E. Pirani and A. Schild, ``Republication of: The geometry of free fall and light propagation,'' \emph{Gen. Relativ. Gravit.} \textbf{44} (2012), 1587--1609. DOI: \href{https://doi.org/10.1007/s10714-012-1353-4}{10.1007/s10714-012-1353-4}.
+
+\bibitem{bipm_metre}
+BIPM, ``SI base unit: metre (m),'' current SI definition; the numerical value of $c$ is fixed exactly at $299\,792\,458$ in $\mathrm{m\,s^{-1}}$. \href{https://www.bipm.org/en/si-base-units/metre}{BIPM metre definition}.
+
+\bibitem{bipm_constants}
+BIPM, ``The International System of Units (SI): Defining constants,'' current SI defining-constant table. \href{https://www.bipm.org/en/measurement-units/si-defining-constants}{BIPM defining constants}.
+
+\bibitem{risi2026photon}
+P. Risi, ``Operational Bookkeeping for Photon Propagation Histories: Null Geodesics, Observer-Dependent Histories, and Phase-Path Bookkeeping,'' Zenodo preprint v1.9B (2026). DOI: \href{https://doi.org/10.5281/zenodo.20836903}{10.5281/zenodo.20836903}.
+
+\end{thebibliography}
+
+\end{document}

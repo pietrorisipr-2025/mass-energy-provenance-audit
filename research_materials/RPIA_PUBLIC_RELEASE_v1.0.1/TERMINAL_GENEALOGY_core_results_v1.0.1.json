@@ -1,0 +1,71 @@
+{
+  "schema_version": "1.0",
+  "audit_id": "RPIA-TERMINAL-GENEALOGY-PHASE1-v0.10.4",
+  "audit_date": "2026-08-22",
+  "baseline_version": "v0.10.4",
+  "baseline_sha256": "adee87dc82a4a103119bf9f2e655a62cee4d2b255840fce34d11c4d26bd4b9d8",
+  "method": "independent_fail_closed_source_first_typed_dependency_audit",
+  "verdicts": {
+    "KAPPA_BRANCH_SELECTION": "EMPIRICAL_INPUT",
+    "FINITE_CONE_EMPIRICAL_STATUS": "EMPIRICAL_INPUT",
+    "SHARED_CONE_UNIVERSALITY_STATUS": "EMPIRICAL_INPUT",
+    "MASSIVE_SHELL_EXISTENCE_STATUS": "EMPIRICAL_INPUT",
+    "MASS_OPERATIONAL_IDENTIFICATION_STATUS": "DEFINITION_PLUS_EMPIRICAL_CALIBRATION",
+    "LINEAR_MOMENTUM_REPRESENTATION_STATUS": "REPRESENTATION_PLUS_EMPIRICAL_IDENTIFICATION",
+    "DIMENSIONFUL_C_SETTING_REMAINS_CLOSED": "YES",
+    "CYCLES_MECHANISM_REMAINS_BLOCKED": "YES",
+    "OVERALL_TERMINAL_STATUS": "IRREDUCIBLE_EMPIRICAL_RESIDUE_IDENTIFIED",
+    "READY_FOR_NEW_MECHANISM_BRANCH": "NO",
+    "NOVELTY_STATUS": "NOVELTY_NOT_ESTABLISHED"
+  },
+  "minimal_empirical_residue": [
+    {
+      "key": "finite_lorentzian_branch",
+      "statement": "Nature realizes the finite hyperbolic/Lorentzian kinematic branch kappa > 0 rather than the Galilean branch kappa = 0 or the algebraically allowed elliptic branch kappa < 0.",
+      "status": "EMPIRICAL_INPUT"
+    },
+    {
+      "key": "shared_cone",
+      "statement": "The sectors used to define matter momentum, clocks and null propagation share one Lorentzian cone and normalization to the declared experimental precision.",
+      "status": "EMPIRICAL_INPUT"
+    },
+    {
+      "key": "linear_physical_momentum",
+      "statement": "The measured physical momentum in the declared regime realizes the standard linear Lorentz covector representation; in gauge backgrounds this means kinetic rather than naked canonical momentum.",
+      "status": "EMPIRICAL_INPUT"
+    },
+    {
+      "key": "stable_massive_sector",
+      "statement": "A stable or sufficiently sharp future-timelike massive branch with a rest point exists for the species and regime under discussion.",
+      "status": "EMPIRICAL_INPUT"
+    },
+    {
+      "key": "operational_mass_calibration",
+      "statement": "The symbol m is tied by a declared measurement protocol to the infrared inertial curvature coefficient of that branch; equalities with other mass notions require separate calibration or theory.",
+      "status": "EMPIRICAL_INPUT"
+    }
+  ],
+  "conditional_terminal_statement": "Given the five empirical inputs, the stated regularity and connectedness assumptions, and the infrared definition E(p)=E0+|p|^2/(2m_in)+O(|p|^4), the standard Lorentz orbit theorem yields E0=m_in c^2 in the declared operational regime.",
+  "fail_closed_boundaries": [
+    "Relativity, homogeneity and isotropy do not select kappa > 0 over kappa = 0; exclusion of kappa < 0 imports an additional physical criterion such as causal order, nonrecurrence or an equivalent global assumption.",
+    "Exact common-c consistency is conditional on a shared standard linear Lorentz action; it does not explain the origin of that shared structure.",
+    "The existence, species assignment and stability of a massive shell are not consequences of orbit classification.",
+    "E0=m_in c^2 does not identify m_in with pole, running, bare, gravitational, composite or worldline parameters outside a declared regime.",
+    "The numerical SI value of c is metrological and is not a unit-independent dynamical target.",
+    "No audited RG, spin-2, conformal-normalization, photon-operational or cycles route establishes a universal origin mechanism."
+  ],
+  "source_classification": {
+    "recursive_power_invariant_audit_v0.10.4_release.zip": "CANONICAL_BASELINE_AND_EMBEDDED_EVIDENCE",
+    "recursive_power_invariant_audit_v0.10.4_release.zip.sha256": "CHECKSUM_SIDECAR",
+    "GEM_02_READER_v0.1.2_WORKING_CH01-04.docx": "NONRESPONSIVE_EXTERNAL_SOURCE"
+  },
+  "public_version": "1.0.1",
+  "public_claim_scope": "COMMON_EMPIRICAL_RESIDUE_WITHIN_AUDITED_ROUTE_SET",
+  "intersection_interpretation": "COMMONALITY_NOT_UNIVERSAL_EXHAUSTIVENESS",
+  "mass_node_typing": {
+    "infrared_inertial_coefficient": "DEFINITION_OPERATIONAL_CONVENTION",
+    "reported_mass_identification": "EMPIRICAL_INPUT"
+  },
+  "translation_noether_common_input": false,
+  "rpia_reopened": false
+}

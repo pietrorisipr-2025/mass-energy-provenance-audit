@@ -1,0 +1,291 @@
+{
+  "schema_version": "1.0",
+  "audit_id": "RPIA-TERMINAL-GENEALOGY-PHASE1-v0.10.4",
+  "terminal_claim": "E0 = m_in c^2 in the declared operational regime",
+  "allowed_primary_labels": [
+    "THEOREM",
+    "DEFINITION",
+    "REPRESENTATION",
+    "UNIT_CONVENTION",
+    "THEORY_CLASS_ASSUMPTION",
+    "EMPIRICAL_INPUT",
+    "KNOWN_RESULT_REDERIVED",
+    "NOT_ESTABLISHED"
+  ],
+  "graphs": [
+    {
+      "id": "GLOBAL_POINCARE",
+      "title": "Global Poincare route",
+      "claim_boundary": "Global affine Minkowski/Poincare structure is an explicit theory-class input, not a consequence of the Lorentz sector alone.",
+      "nodes": [
+        {
+          "id": "GP1",
+          "text": "Finite hyperbolic kinematic branch kappa > 0 is physically selected",
+          "primary_label": "EMPIRICAL_INPUT",
+          "residue_key": "finite_lorentzian_branch",
+          "unavoidable_physical_input": true
+        },
+        {
+          "id": "GP2",
+          "text": "Matter, clock and null sectors share one cone and normalization",
+          "primary_label": "EMPIRICAL_INPUT",
+          "residue_key": "shared_cone",
+          "unavoidable_physical_input": true
+        },
+        {
+          "id": "GP3",
+          "text": "Affine Minkowski spacetime with global Poincare semidirect-product action",
+          "primary_label": "THEORY_CLASS_ASSUMPTION"
+        },
+        {
+          "id": "GP4",
+          "text": "Translation generators carry the standard linear Lorentz dual representation",
+          "primary_label": "REPRESENTATION"
+        },
+        {
+          "id": "GP5",
+          "text": "Measured physical momentum realizes that linear representation",
+          "primary_label": "EMPIRICAL_INPUT",
+          "residue_key": "linear_physical_momentum",
+          "unavoidable_physical_input": true
+        },
+        {
+          "id": "GP6",
+          "text": "A stable future-timelike massive one-particle sector with a rest point exists",
+          "primary_label": "EMPIRICAL_INPUT",
+          "residue_key": "stable_massive_sector",
+          "unavoidable_physical_input": true
+        },
+        {
+          "id": "GP7",
+          "text": "The selected sector is a connected regular embedded codimension-one orbit component",
+          "primary_label": "THEORY_CLASS_ASSUMPTION"
+        },
+        {
+          "id": "GP8",
+          "text": "Lorentz-orbit classification fixes E^2-c^2|p|^2=E0^2 on that component",
+          "primary_label": "KNOWN_RESULT_REDERIVED"
+        },
+        {
+          "id": "GP9",
+          "text": "Observer energy E and spatial momentum p are the declared components of the physical covector",
+          "primary_label": "DEFINITION"
+        },
+        {
+          "id": "GP10",
+          "text": "Infrared inertial mass is defined by E(p)=E0+|p|^2/(2m_in)+O(|p|^4)",
+          "primary_label": "DEFINITION"
+        },
+        {
+          "id": "GP11",
+          "text": "The reported mass m is calibrated to m_in for the declared species and regime",
+          "primary_label": "EMPIRICAL_INPUT",
+          "residue_key": "operational_mass_calibration",
+          "unavoidable_physical_input": true
+        },
+        {
+          "id": "GP12",
+          "text": "The positive-branch expansion gives E0=m_in c^2",
+          "primary_label": "KNOWN_RESULT_REDERIVED"
+        },
+        {
+          "id": "GP13",
+          "text": "Choosing c=1 or the SI decimal value changes only the unit presentation",
+          "primary_label": "UNIT_CONVENTION"
+        }
+      ],
+      "edges": [
+        {"id": "GPE1", "from": "GP1", "to": "GP3", "text": "selects the finite Lorentzian sector used by the global construction", "primary_label": "EMPIRICAL_INPUT"},
+        {"id": "GPE2", "from": "GP3", "to": "GP4", "text": "fixes the semidirect-product representation of translations", "primary_label": "REPRESENTATION"},
+        {"id": "GPE3", "from": "GP4", "to": "GP5", "text": "is physically identified with measured momentum only by the declared protocol", "primary_label": "EMPIRICAL_INPUT"},
+        {"id": "GPE4", "from": "GP5", "to": "GP8", "text": "supplies the physical linear momentum coordinates for the orbit theorem", "primary_label": "REPRESENTATION"},
+        {"id": "GPE5", "from": "GP6", "to": "GP7", "text": "requires regularity and connected-component assumptions before classification", "primary_label": "THEORY_CLASS_ASSUMPTION"},
+        {"id": "GPE6", "from": "GP7", "to": "GP8", "text": "permits the standard transitive-orbit classification", "primary_label": "KNOWN_RESULT_REDERIVED"},
+        {"id": "GPE7", "from": "GP1", "to": "GP8", "text": "supplies a real finite Lorentzian quadratic form", "primary_label": "EMPIRICAL_INPUT"},
+        {"id": "GPE8", "from": "GP8", "to": "GP9", "text": "is decomposed in a declared observer frame", "primary_label": "DEFINITION"},
+        {"id": "GPE9", "from": "GP9", "to": "GP10", "text": "fixes the small-momentum variables used in the IR definition", "primary_label": "DEFINITION"},
+        {"id": "GPE10", "from": "GP8", "to": "GP12", "text": "has the positive-root Taylor coefficient c^2/(2E0)", "primary_label": "THEOREM"},
+        {"id": "GPE11", "from": "GP10", "to": "GP12", "text": "identifies that coefficient with 1/(2m_in)", "primary_label": "DEFINITION"},
+        {"id": "GPE12", "from": "GP11", "to": "GP12", "text": "authorizes use of the measured mass symbol in this regime", "primary_label": "EMPIRICAL_INPUT"},
+        {"id": "GPE13", "from": "GP2", "to": "GP12", "text": "identifies the shell coefficient c with the operational common cone", "primary_label": "EMPIRICAL_INPUT"},
+        {"id": "GPE14", "from": "GP13", "to": "GP12", "text": "changes the displayed factors but not the dimensionless content", "primary_label": "UNIT_CONVENTION"}
+      ]
+    },
+    {
+      "id": "FIBERWISE_LOCAL_SHELL",
+      "title": "Fiberwise/local-shell route",
+      "claim_boundary": "No global translations, globally conserved energy or global Poincare group are required; the result is pointwise and observer-relative.",
+      "nodes": [
+        {
+          "id": "FL1",
+          "text": "Finite local Lorentzian cone rather than Galilean or elliptic kinematics is physically realized",
+          "primary_label": "EMPIRICAL_INPUT",
+          "residue_key": "finite_lorentzian_branch",
+          "unavoidable_physical_input": true
+        },
+        {
+          "id": "FL2",
+          "text": "Relevant sectors share the local cone and its operational normalization",
+          "primary_label": "EMPIRICAL_INPUT",
+          "residue_key": "shared_cone",
+          "unavoidable_physical_input": true
+        },
+        {
+          "id": "FL3",
+          "text": "A time-oriented Lorentzian cotangent fiber and future observer are declared",
+          "primary_label": "THEORY_CLASS_ASSUMPTION"
+        },
+        {
+          "id": "FL4",
+          "text": "Physical momentum is represented as a standard linear Lorentz covector; in gauge backgrounds it is kinetic momentum",
+          "primary_label": "REPRESENTATION"
+        },
+        {
+          "id": "FL5",
+          "text": "The measured momentum is empirically identified with that kinetic covector",
+          "primary_label": "EMPIRICAL_INPUT",
+          "residue_key": "linear_physical_momentum",
+          "unavoidable_physical_input": true
+        },
+        {
+          "id": "FL6",
+          "text": "A stable future-timelike massive local shell with a rest point exists",
+          "primary_label": "EMPIRICAL_INPUT",
+          "residue_key": "stable_massive_sector",
+          "unavoidable_physical_input": true
+        },
+        {
+          "id": "FL7",
+          "text": "The selected shell is connected, regular, embedded, boundaryless and codimension one",
+          "primary_label": "THEORY_CLASS_ASSUMPTION"
+        },
+        {
+          "id": "FL8",
+          "text": "Fiberwise Lorentz-orbit classification fixes g^-1(pi,pi)=E0(x)^2/c^2",
+          "primary_label": "KNOWN_RESULT_REDERIVED"
+        },
+        {
+          "id": "FL9",
+          "text": "Observer decomposition defines E_u=pi(u) and measured spatial momentum p_u",
+          "primary_label": "DEFINITION"
+        },
+        {
+          "id": "FL10",
+          "text": "Infrared inertial mass is defined by the quadratic coefficient at the rest point",
+          "primary_label": "DEFINITION"
+        },
+        {
+          "id": "FL11",
+          "text": "The reported mass m is calibrated to the local m_in in the declared regime",
+          "primary_label": "EMPIRICAL_INPUT",
+          "residue_key": "operational_mass_calibration",
+          "unavoidable_physical_input": true
+        },
+        {
+          "id": "FL12",
+          "text": "Local positive-branch expansion gives E0(x)=m_in(x)c^2",
+          "primary_label": "KNOWN_RESULT_REDERIVED"
+        }
+      ],
+      "edges": [
+        {"id": "FLE1", "from": "FL1", "to": "FL3", "text": "selects the real finite Lorentzian local geometry", "primary_label": "EMPIRICAL_INPUT"},
+        {"id": "FLE2", "from": "FL3", "to": "FL4", "text": "provides the standard local covector representation", "primary_label": "REPRESENTATION"},
+        {"id": "FLE3", "from": "FL4", "to": "FL5", "text": "becomes physical only after operational identification", "primary_label": "EMPIRICAL_INPUT"},
+        {"id": "FLE4", "from": "FL5", "to": "FL8", "text": "supplies the physical momentum coordinate acted on linearly", "primary_label": "REPRESENTATION"},
+        {"id": "FLE5", "from": "FL6", "to": "FL7", "text": "requires explicit shell-regularity hypotheses", "primary_label": "THEORY_CLASS_ASSUMPTION"},
+        {"id": "FLE6", "from": "FL7", "to": "FL8", "text": "permits the local single-orbit conclusion", "primary_label": "KNOWN_RESULT_REDERIVED"},
+        {"id": "FLE7", "from": "FL1", "to": "FL8", "text": "supplies the local Lorentzian invariant", "primary_label": "EMPIRICAL_INPUT"},
+        {"id": "FLE8", "from": "FL8", "to": "FL9", "text": "is decomposed relative to the declared observer", "primary_label": "DEFINITION"},
+        {"id": "FLE9", "from": "FL9", "to": "FL10", "text": "defines the variables used in the IR coefficient", "primary_label": "DEFINITION"},
+        {"id": "FLE10", "from": "FL8", "to": "FL12", "text": "fixes the positive-root Taylor series", "primary_label": "THEOREM"},
+        {"id": "FLE11", "from": "FL10", "to": "FL12", "text": "identifies the quadratic coefficient with inertial mass", "primary_label": "DEFINITION"},
+        {"id": "FLE12", "from": "FL11", "to": "FL12", "text": "links the measured mass label to m_in", "primary_label": "EMPIRICAL_INPUT"},
+        {"id": "FLE13", "from": "FL2", "to": "FL12", "text": "identifies the local shell cone with the common operational c", "primary_label": "EMPIRICAL_INPUT"}
+      ]
+    },
+    {
+      "id": "MINIMAL_EMPIRICAL",
+      "title": "Minimal empirical route",
+      "claim_boundary": "This graph intentionally removes global Poincare, RG, spin-2, conformal-setting and photon-cycle mechanisms; it retains only the irreducible physical premises plus the known local orbit/IR bridge.",
+      "nodes": [
+        {
+          "id": "ME1",
+          "text": "Finite Lorentzian branch kappa > 0 is selected",
+          "primary_label": "EMPIRICAL_INPUT",
+          "residue_key": "finite_lorentzian_branch",
+          "unavoidable_physical_input": true
+        },
+        {
+          "id": "ME2",
+          "text": "Matter, clock and null sectors share one operational cone",
+          "primary_label": "EMPIRICAL_INPUT",
+          "residue_key": "shared_cone",
+          "unavoidable_physical_input": true
+        },
+        {
+          "id": "ME3",
+          "text": "Measured physical momentum realizes the standard linear local Lorentz covector representation",
+          "primary_label": "EMPIRICAL_INPUT",
+          "residue_key": "linear_physical_momentum",
+          "unavoidable_physical_input": true
+        },
+        {
+          "id": "ME4",
+          "text": "A stable regular connected future-timelike massive branch exists",
+          "primary_label": "EMPIRICAL_INPUT",
+          "residue_key": "stable_massive_sector",
+          "unavoidable_physical_input": true
+        },
+        {
+          "id": "ME5",
+          "text": "The reported mass is operationally calibrated to the IR inertial curvature coefficient",
+          "primary_label": "EMPIRICAL_INPUT",
+          "residue_key": "operational_mass_calibration",
+          "unavoidable_physical_input": true
+        },
+        {
+          "id": "ME6",
+          "text": "Standard local Lorentz orbit classification yields E^2-c^2|p|^2=E0^2",
+          "primary_label": "KNOWN_RESULT_REDERIVED"
+        },
+        {
+          "id": "ME7",
+          "text": "Define m_in from E=E0+|p|^2/(2m_in)+O(|p|^4)",
+          "primary_label": "DEFINITION"
+        },
+        {
+          "id": "ME8",
+          "text": "E0=m_in c^2 in the declared operational regime",
+          "primary_label": "KNOWN_RESULT_REDERIVED"
+        },
+        {
+          "id": "ME9",
+          "text": "A universal dynamical origin of the five physical inputs",
+          "primary_label": "NOT_ESTABLISHED"
+        }
+      ],
+      "edges": [
+        {"id": "MEE1", "from": "ME1", "to": "ME6", "text": "selects the finite hyperbolic invariant used by the theorem", "primary_label": "EMPIRICAL_INPUT"},
+        {"id": "MEE2", "from": "ME3", "to": "ME6", "text": "fixes the physical momentum variables and linear action", "primary_label": "REPRESENTATION"},
+        {"id": "MEE3", "from": "ME4", "to": "ME6", "text": "supplies the physical orbit component to classify", "primary_label": "EMPIRICAL_INPUT"},
+        {"id": "MEE4", "from": "ME6", "to": "ME7", "text": "provides the positive-root expansion at the rest point", "primary_label": "THEOREM"},
+        {"id": "MEE5", "from": "ME7", "to": "ME8", "text": "turns the exact Taylor coefficient into the inertial-mass identity", "primary_label": "DEFINITION"},
+        {"id": "MEE6", "from": "ME5", "to": "ME8", "text": "authorizes the operational mass identification", "primary_label": "EMPIRICAL_INPUT"},
+        {"id": "MEE7", "from": "ME2", "to": "ME8", "text": "identifies the shell coefficient with the common operational cone", "primary_label": "EMPIRICAL_INPUT"},
+        {"id": "MEE8", "from": "ME1", "to": "ME9", "text": "has no audited universal selection mechanism", "primary_label": "NOT_ESTABLISHED"},
+        {"id": "MEE9", "from": "ME2", "to": "ME9", "text": "has no audited universal alignment mechanism", "primary_label": "NOT_ESTABLISHED"},
+        {"id": "MEE10", "from": "ME3", "to": "ME9", "text": "has no audited derivation as the uniquely physical momentum realization", "primary_label": "NOT_ESTABLISHED"},
+        {"id": "MEE11", "from": "ME4", "to": "ME9", "text": "has no derivation from orbit geometry", "primary_label": "NOT_ESTABLISHED"},
+        {"id": "MEE12", "from": "ME5", "to": "ME9", "text": "remains protocol- and regime-dependent", "primary_label": "NOT_ESTABLISHED"}
+      ]
+    }
+  ],
+  "intersection_method": "For each graph, collect residue_key from nodes with unavoidable_physical_input=true and primary_label=EMPIRICAL_INPUT; take the exact set intersection.",
+  "minimal_empirical_residue": [
+    "finite_lorentzian_branch",
+    "shared_cone",
+    "linear_physical_momentum",
+    "stable_massive_sector",
+    "operational_mass_calibration"
+  ]
+}
